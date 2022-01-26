@@ -13,5 +13,6 @@ jobs:
           surname: 'Zosimov'
       # Use the output from the `hello` step
       - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
-        run: echo "Catchphrase for today is ${{ steps.hello.outputs.catchphrase }}"
+        run: |
+          echo "The time was ${{ steps.hello.outputs.time }}"
+          echo "Catchphrase for today is ${{ steps.hello.outputs.catchphrase }}"
