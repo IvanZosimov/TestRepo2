@@ -29,7 +29,11 @@ jobs:
         run: |
           echo "Some logs are pretending to be here" > logs.txt
           echo "Log file was created"
-      
+      - name: save file as artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: output-log-file
+          path: logs.txt  
       
       
         
