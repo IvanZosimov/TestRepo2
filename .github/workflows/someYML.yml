@@ -20,3 +20,19 @@ jobs:
         env: 
           EVENT_OBJ: ${{ toJSON(github.event) }}
         run: echo "Context is $EVENT_OBJ"
+  second_job:
+    runs-on: ubuntu-latest
+    name: A job run in parallel with hello-world
+    steps:
+      - name: create log file
+      - shell: bash
+        run: echo "Some logs are pretending to be here" > logs.txt
+      - name: save file as artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: output-log-file
+          path: logs.txt
+      
+      
+        
+        
