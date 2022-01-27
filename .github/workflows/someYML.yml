@@ -18,5 +18,5 @@ jobs:
           echo "Catchphrase for today is ${{ steps.hello.outputs.catchphrase }}"
       - name: Show github event context
         env: 
-          EVENT_OBJ: ${{ github.event }}
-        run: echo "Context is ${{ toJSON($EVENT_OBJ) }}"
+          EVENT_OBJ: ${{ toJSON(github.event) }}
+        run: echo "Context is $EVENT_OBJ"
