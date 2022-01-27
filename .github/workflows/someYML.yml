@@ -25,6 +25,7 @@ jobs:
     name: A job run in parallel with hello-world
     steps:
       - name: create log file
+        shell: bash
         run: |
           echo "Some logs are pretending to be here" > logs.txt
           echo "Log file was created"
