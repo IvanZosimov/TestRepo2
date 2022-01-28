@@ -2,29 +2,11 @@ name: Context testing
 on: push
 
 jobs:
-  dump_contexts_to_log:
+  setup-go-job:
     runs-on: ubuntu-latest
-    env:
-      justin: 'bieber'
-      antony: 'hopkins'
     steps:
-      - name: Dump GitHub context
-        id: github_context_step
-        if: ${{ env.lalala == 'la' }} 
-        run: |
-          echo '${{ toJSON(github) }}'
-          echo '${{ toJSON(env) }}'
-        env:
-          lalala: 'la'
-      - name: Dump job context
-        run: echo '${{ toJSON(job) }}'
-      - name: Dump steps context
-        run: echo '${{ toJSON(steps) }}'
-      - name: Dump runner context
-        run: echo '${{ toJSON(runner) }}'
-      - name: Dump strategy context
-        run: echo '${{ toJSON(strategy) }}'
-      - name: Dump matrix context
-        run: echo '${{ toJSON(matrix) }}'
-      - name: Dump env context
-        run: echo '${{ toJSON(env) }}'
+      - uses: actions/setup-go@v2
+        with:
+          go-version: '14'
+          stable: 'true'
+          
