@@ -3,7 +3,7 @@ on: push
 
 jobs:
   setup-go-job:
-    runs-on: ubuntu-latest
+    runs-on: windows-2016
     steps:
       - uses: actions/setup-go@v2
         with:
