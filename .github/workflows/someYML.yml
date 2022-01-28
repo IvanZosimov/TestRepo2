@@ -1,48 +1,20 @@
-on: workflow_dispatch
+name: Context testing
+on: push
 
 jobs:
-  hello_world_job:
+  dump_contexts_to_log:
     runs-on: ubuntu-latest
-    name: A job to say hello
     steps:
-      - name: Hello world action step
-        id: hello
-        uses: IvanZosimov/TestRepo@main
-        with:
-          name: 'Ivan'
-          surname: 'Zosimov'
-      # Use the output from the `hello` step
-      - name: Get the output time
-        run: |
-          echo "The time was ${{ steps.hello.outputs.time }}"
-          echo "Catchphrase for today is ${{ steps.hello.outputs.catchphrase }}"
-      - name: Show github event context
-        env: 
-          EVENT_OBJ: ${{ toJSON(github.event) }}
-        run: echo "Context is $EVENT_OBJ"
-  second_job:
-    runs-on: ubuntu-latest
-    name: A job run in parallel with hello-world
-    steps:
-      - name: create log file
-        shell: bash
-        run: |
-          echo "Some logs are pretending to be here" > logs.txt
-          echo "Log file was created"
-      - name: save file as artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: output-log-file
-          path: logs.txt  
-  third_job:
-    needs: second_job
-    runs-on: ubuntu-latest
-    name: A job to run after two previous jobs
-    steps:
-      - name: Download a single artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: output-log-file
-      
-        
-        
+      - name: Dump GitHub context
+        id: github_context_step
+        run: echo '${{ toJSON(github) }}'
+      - name: Dump job context
+        run: echo '${{ toJSON(job) }}'
+      - name: Dump steps context
+        run: echo '${{ toJSON(steps) }}'
+      - name: Dump runner context
+        run: echo '${{ toJSON(runner) }}'
+      - name: Dump strategy context
+        run: echo '${{ toJSON(strategy) }}'
+      - name: Dump matrix context
+        run: echo '${{ toJSON(matrix) }}'
