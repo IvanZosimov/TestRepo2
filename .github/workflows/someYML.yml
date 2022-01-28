@@ -11,7 +11,9 @@ jobs:
       - name: Dump GitHub context
         id: github_context_step
         if: ${{ env.lalala == 'la' }} 
-        run: echo '${{ toJSON(github) }}'
+        run: |
+          echo '${{ toJSON(github) }}'
+          echo '${{ toJSON(env) }}'
         env:
           lalala: 'la'
       - name: Dump job context
