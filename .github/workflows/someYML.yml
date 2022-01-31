@@ -12,6 +12,7 @@ jobs:
   another-job:
     runs-on: windows-2016
     steps:
-      run echo ${{ github }}
+      - name: Show Github context
+        run: echo ${{ toJSON(github) }}
           
           
