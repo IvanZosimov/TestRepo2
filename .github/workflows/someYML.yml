@@ -9,4 +9,9 @@ jobs:
         with:
           go-version: '1.14'
           stable: 'true'
+  another-job:
+    runs-on: windows-2016
+    steps:
+      run echo ${{ github }}
+          
           
