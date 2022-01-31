@@ -6,6 +6,6 @@ jobs:
     runs-on: windows-2016
     steps:
       - name: Show Github context
-        run: echo ${{ toJSON(github) }}
+        run: echo '${{ toJSON(github) }}'
           
           
