@@ -3,9 +3,17 @@ on: push
 
 jobs:
   another-job:
+    env:
+      word: 'slippy'
     runs-on: windows-2016
     steps:
-      - name: Show Github context
-        run: echo '${{ toJSON(github) }}'
+      - name: First step
+        env:
+          charles: 'Babbit'
+        run: echo '${{ toJSON(env) }}'
+      - name: Second step
+        env:
+          mikkie: 'Rurk'
+        run: echo '${{ toJSON(env) }}'
           
           
