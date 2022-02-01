@@ -3,17 +3,8 @@ on: push
 
 jobs:
   another-job:
-    env:
-      word: 'slippy'
     runs-on: windows-2016
     steps:
-      - name: First step
-        env:
-          charles: 'Babbit'
-        run: echo '${{ toJSON(env) }}'
-      - name: Second step
-        env:
-          mikkie: 'Rurk'
-        run: echo '${{ toJSON(env.mikkie) }}'
-          
+      - name: setup go
+        uses: actions/setup-go@v2
           
