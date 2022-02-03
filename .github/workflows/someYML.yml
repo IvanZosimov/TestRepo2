@@ -10,7 +10,14 @@ jobs:
       - name: Get my file from cache
         uses: actions/cache@v2
         with:
+          path: ./TestFolder
           key: mySingleKey
-        
+          
+      - name: Use cached file
+        run: |
+          Get-Content .\TestFolder\textfile.txt
+        shell: pwsh
+       
+      
      
         
