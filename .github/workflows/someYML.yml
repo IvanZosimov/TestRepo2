@@ -6,14 +6,16 @@ jobs:
     runs-on: windows-2016
     steps:
       - name: create folder with text file
-        run: echo 'New-Item -Path '\\NewFolder\newfile.txt' -ItemType File'
+        run: |
+          echo 'Creating new folder'
+          New-Item -Path '.\TestFolder' -ItemType Directory
+          echo 'Creating new file'
+          New-Item -Path '.\TestFolder\textfile.txt' -ItemType File
+          echo 'Write Hello World!!! inside'
+          Add-Content -Path '.\TestFolder\textfile.txt' -Value "Hello world!!!"
+          echo 'Retrieving content:'
+          Get-Content .\TestFolder\textfile.txt
         shell: pwsh
         
-      - name: Fill file with Hello World
-        run: echo '$text = 'Hello World dsasdfsxc\asdfasd!' | Out-File $text -FilePath \\NewFolder\newfile.txt -Force'
-        shell: pwsh
-        
-      - name: Open created txt file
-        run: echo 'Get-Content \\NewFolder\newfile.txt'
-        shell: pwsh
+     
         
