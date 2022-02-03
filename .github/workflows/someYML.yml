@@ -15,8 +15,7 @@ jobs:
           
       - name: Use cached file
         run: |
-          New-Item -Path '.\TestFolder\textfile.txt' -ItemType File
           Get-Content .\TestFolder\textfile.txt
-          
+         
         shell: pwsh
               
