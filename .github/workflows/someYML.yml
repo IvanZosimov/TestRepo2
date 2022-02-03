@@ -5,6 +5,8 @@ jobs:
   another-job:
     runs-on: windows-2016
     steps:
+      - uses: actions/checkout@v2
+      
       - name: create folder with text file
         run: |
           echo 'Creating new folder'
@@ -16,6 +18,12 @@ jobs:
           echo 'Retrieving content:'
           Get-Content .\TestFolder\textfile.txt
         shell: pwsh
+        
+      - name: Cache my file
+        uses: actions/cache@v2
+        with:
+          path: .\TestFolder
+          key: mySingleKey
         
      
         
