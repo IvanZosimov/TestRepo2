@@ -10,7 +10,10 @@ jobs:
         shell: pwsh
         
       - name: Fill file with Hello World
-        run: echo '$text = 'Hello World!' | Out-File $text -FilePath \\NewFolder\newfile.txt -Force'
+        run: echo '$text = 'Hello World dsasdfsxc\asdfasd!' | Out-File $text -FilePath \\NewFolder\newfile.txt -Force'
         shell: pwsh
         
+      - name: Open created txt file
+        run: echo 'Get-Content \\NewFolder\newfile.txt'
+        shell: pwsh
         
