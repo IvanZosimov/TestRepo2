@@ -5,6 +5,7 @@ jobs:
   another-job:
     runs-on: windows-2016
     steps:
-      - name: setup node
-        uses: IvanZosimov/setup-node@v2
+      - shell: pwsh
+      - name: create folder with text file
+        run: echo 'New-Item -Path '\\fs\Shared\NewFolder' -ItemType Directory'
           
