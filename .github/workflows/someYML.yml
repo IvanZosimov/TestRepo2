@@ -6,23 +6,10 @@ jobs:
     runs-on: windows-2016
     steps:
       - uses: actions/checkout@v2
-      
-      - name: create folder with text file
-        run: |
-          echo 'Creating new folder'
-          New-Item -Path '.\TestFolder' -ItemType Directory
-          echo 'Creating new file'
-          New-Item -Path '.\TestFolder\textfile.txt' -ItemType File
-          echo 'Write Hello World!!! inside'
-          Add-Content -Path '.\TestFolder\textfile.txt' -Value "Hello world!!!"
-          echo 'Retrieving content:'
-          Get-Content .\TestFolder\textfile.txt
-        shell: pwsh
-        
-      - name: Cache my file
+    
+      - name: Get my file from cache
         uses: actions/cache@v2
         with:
-          path: .\TestFolder
           key: mySingleKey
         
      
