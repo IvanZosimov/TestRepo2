@@ -6,5 +6,11 @@ jobs:
     runs-on: windows-2016
     steps:
       - name: create folder with text file
-        run: echo 'New-Item -Path '\\fs\Shared\NewFolder' -ItemType Directory'
-        shell: pwsh 
+        run: echo 'New-Item -Path '\\NewFolder\newfile.txt' -ItemType File'
+        shell: pwsh
+        
+      - name: Fill file with Hello World
+        run: echo '$text = 'Hello World!' | Out-File $text -FilePath \\NewFolder\newfile.txt -Force'
+        shell: pwsh
+        
+        
