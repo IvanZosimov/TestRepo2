@@ -5,9 +5,7 @@ jobs:
     another-job:
       runs-on: windows-2016
       steps:
-        - uses: actions/setup-go@v2
+        - uses: IvanZosimovsetup-go@v-smurtazin/check-latest-akv-platform
           with:
-            go-version: '>= 1.5 || <2'
-        
-        
-        
+            go-version: '1.8.6'
+            check-latest: true
