@@ -5,16 +5,9 @@ jobs:
     another-job:
       runs-on: windows-2016
       steps:
-        - uses: actions/checkout@v2
-        
-        - name: Cache directory with the file
-          uses: actions/cache@v2
+        - uses: actions/setup-go@v2
           with:
-            path: .\TestFolder
-            key: mySingleKey
+            go-version: '>= 1.15 || <2'
         
-        - name: Get cached file content 
-          run: |
-            echo 'Retrieving content:'
-            Get-Content .\TestFolder\textfile.txt
-          shell: pwsh
+        
+        
