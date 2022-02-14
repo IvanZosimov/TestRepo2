@@ -5,8 +5,8 @@ jobs:
     another-job:
       runs-on: windows-2016
       steps:
-        - run: echo '$GITHUB_WORKSPACE'
+        - run: echo '${{ toJSON(github.workspace)}}'
     another-job-2:
       runs-on: windows-2016
       steps:
-        - run: echo '$GITHUB_WORKSPACE'
+        - run: echo '${{ toJSON(github.workspace)}}'
