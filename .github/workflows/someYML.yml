@@ -7,6 +7,6 @@ jobs:
       steps:
         - run: echo '${{ toJSON(github.workspace)}}'
     another-job-2:
-      runs-on: windows-2016
+      runs-on: ubuntu-latest
       steps:
         - run: echo '${{ toJSON(github.workspace)}}'
