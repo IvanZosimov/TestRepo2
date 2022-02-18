@@ -3,7 +3,7 @@ on: push
 
 jobs:
     first-job:
-      runs-on: windows-2016
+      runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v2
         - uses: actions/setup-node@v2
@@ -13,7 +13,8 @@ jobs:
         - run: npm install
         - run: npm start
     reusing-cache-job:
-        runs-on: windows-2016
+        needs: first-job
+        runs-on: ubuntu-latest
         steps:
         - uses: actions/checkout@v2
         - uses: actions/setup-node@v2
