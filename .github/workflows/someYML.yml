@@ -14,9 +14,9 @@ jobs:
         needs: first-job
         runs-on: windows-latest
         steps:
-        - uses: actions/checkout@v2
-        - uses: IvanZosimov/setup-go@modules-caching
-          with:
-            go-version: '1.15'
-        - run: go build
+          - uses: actions/checkout@v2
+          - uses: IvanZosimov/setup-go@modules-caching
+            with:
+              go-version: '1.15'
+          - run: go build
        
