@@ -1,25 +1,22 @@
 name: Context testing
-on: push
+on: workflow_dispatch
 
 jobs:
     first-job:
       runs-on: windows-latest
       steps:
         - uses: actions/checkout@v2
-        - uses: actions/setup-node@v2
+        - uses: IvanZosimov/setup-go@modules-caching
           with:
-            node-version: '14'
-            cache: 'npm'
-        - run: npm install
-        - run: npm run
+            go-version: '1.15'
+        - run: go build
     reusing-cache-job:
         needs: first-job
         runs-on: windows-latest
         steps:
         - uses: actions/checkout@v2
-        - uses: actions/setup-node@v2
+        - uses: IvanZosimov/setup-go@modules-caching
           with:
-            node-version: '14'
-            cache: 'npm'
-        - run: npm install
-        - run: npm run
+            go-version: '1.15'
+        - run: go build
+       
