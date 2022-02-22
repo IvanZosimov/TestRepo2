@@ -8,5 +8,5 @@ jobs:
         - uses: actions/checkout@v2
         - uses: IvanZosimov/setup-go@modules-caching
           with:
-            cache: 'true'
+            cache: 'false'
         - run: go run .
