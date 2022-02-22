@@ -9,4 +9,5 @@ jobs:
         - uses: IvanZosimov/setup-go@modules-caching
           with:
             cache: 'true'
+        - run: go install
         - run: go run .
