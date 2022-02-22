@@ -9,5 +9,4 @@ jobs:
         - uses: IvanZosimov/setup-go@modules-caching
           with:
             cache: 'true'
-            cache-dependency-path: '**/go.sum'
         - run: go run .
