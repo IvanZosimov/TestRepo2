@@ -3,10 +3,10 @@ on: workflow_dispatch
 
 jobs:
     first-job:
-      runs-on: ubuntu-latest
+      runs-on: macos-latest
       steps:
         - uses: actions/checkout@v2
         - uses: IvanZosimov/setup-go@modules-caching
           with:
-            cache: 'true'
+            cache: 'false'
         - run: go run .
