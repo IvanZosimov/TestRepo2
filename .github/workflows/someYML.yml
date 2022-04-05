@@ -10,3 +10,7 @@ jobs:
           with:
             cache: TRUE
         - run: go build
+        - name: Get path to the toolcache
+          shell: pwsh
+          run: $ENV:RUNNER_TOOL_CACHE
+            
