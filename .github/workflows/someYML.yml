@@ -1,16 +1,11 @@
 name: Context testing
-on: workflow_dispatch
+on: 
+    workflow_dispatch:
+    push:
 
 jobs:
     first-job:
       runs-on: windows-latest
       steps:
         - uses: actions/checkout@v2
-        - uses: IvanZosimov/setup-go@modules-caching
-          with:
-            cache: TRUE
-        - run: go build
-        - name: Get path to the toolcache
-          shell: pwsh
-          run: echo $ENV:RUNNER_TOOL_CACHE
-            
+        - uses: IvanZosimov/setup-go@modules-caching       
