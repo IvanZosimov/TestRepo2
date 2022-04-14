@@ -8,8 +8,7 @@ jobs:
       runs-on: windows-latest
       steps:
         - uses: actions/checkout@v2
-        - uses: IvanZosimov/setup-go@modules-caching
+        - uses: IvanZosimov/setup-go@v3
           with: 
-            go-version: 1.17.3
-            cache: true
-            cache-dependency-path: path/go.sum
+            go-version: 1.17
+            check-latest: true
