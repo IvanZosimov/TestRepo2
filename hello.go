@@ -7,7 +7,7 @@ import (
 
 func main() {
 	err := beeep.Beep(beeep.DefaultFreq, beeep.DefaultDuration)
-	if err != nil {
+	 if err != nil {
 		panic(err)
 	}
 }
