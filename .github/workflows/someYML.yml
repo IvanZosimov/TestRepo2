@@ -10,5 +10,5 @@ jobs:
         - uses: actions/checkout@v3
         - uses: jojo43/setup-go@go-version-from-file
           with:
-            go-version-file: ./.go-version
+            go-version-file: ./path/.go-version
         - run: go build
