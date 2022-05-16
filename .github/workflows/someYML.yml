@@ -8,7 +8,13 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v3
-        - uses: actions/setup-go@v3.1.0
+        - uses: actions/setup-go@v3
           with:
-            go-version-file: ./go.mod1
-        - run: go build
+            go-version-file: ./go.mod
+        - name: Print Github.env 1
+          run: echo '${{ toJSON(github.env) }}'
+        - name: Set GOROOT
+          run: |
+            echo "GOROOT=$GOROOT_1_18_X64" >> $GITHUB_ENV
+        - name: Print Github.env 2
+          run: echo '${{ toJSON(github.env) }}'
