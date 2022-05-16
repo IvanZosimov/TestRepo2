@@ -12,9 +12,9 @@ jobs:
           with:
             go-version-file: ./go.mod
         - name: Print Github.env 1
-          run: echo '${{ toJSON(github.env) }}'
+          run: echo '${{ toJSON(github) }}'
         - name: Set GOROOT
           run: |
             echo "GOROOT=$GOROOT_1_18_X64" >> $GITHUB_ENV
         - name: Print Github.env 2
-          run: echo '${{ toJSON(github.env) }}'
+          run: echo '${{ toJSON(github) }}'
