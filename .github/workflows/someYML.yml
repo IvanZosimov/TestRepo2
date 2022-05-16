@@ -13,6 +13,6 @@ jobs:
             go-version-file: ./go.mod
         - name: Set GOROOT
           run: |
-            echo '${{ toJSON(github) }}'
+            echo '${{ toJSON(github.env.GOROOT) }}'
             echo "GOROOT=$GOROOT_1_18_X64" >> $GITHUB_ENV
-            echo '${{ toJSON(github) }}'
+            echo '${{ toJSON(github.env.GOROOT) }}'
