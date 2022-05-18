@@ -10,9 +10,4 @@ jobs:
         - uses: actions/checkout@v3
         - uses: actions/setup-go@v3
           with:
-            go-version-file: ./go.mod
-        - name: Set GOROOT
-          run: |
-            echo '${{ toJSON(github.env.GOROOT) }}'
-            echo "GOROOT=$GOROOT_1_18_X64" >> $GITHUB_ENV
-            echo '${{ toJSON(github.env.GOROOT) }}'
+            go-version-file: ./some.txt
