@@ -8,6 +8,7 @@ jobs:
       strategy:
         matrix:
           caching: ["true", "false"]
+          goSum: ["./go.sum", "./path/go.sum"]
           goMod: ["./go.mod", "./.go-version", ""]
           os: [ubuntu-latest, windows-latest, macos-latest, ubuntu-22.04, ubuntu-18.04, macos-12, macos-10.15, windows-2019, windows-2016 ]
       runs-on: ${{matrix.os}}
@@ -17,4 +18,5 @@ jobs:
           with:
             cache: ${{matrix.caching}}
             go-version-file: ${{matrix.goMod}}
+            cache-dependency-path: ${{matrix.goSum}}
         - run: go build
