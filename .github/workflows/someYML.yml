@@ -5,10 +5,16 @@ on:
 
 jobs:
     first-job:
-      runs-on: ubuntu-latest
+      strategy:
+        matrix:
+          caching: ["true", "false"]
+          goMod: ["./go.mod", "./.go-version", ""]
+          os: [ubuntu-latest, windows-latest, macos-latest, ubuntu-22.04, ubuntu-18.04, macos-12, macos-10.15, windows-2019, windows-2016 ]
+      runs-on: ${{matrix.os}}
       steps:
         - uses: actions/checkout@v3
-        - uses: jojo43/setup-go@go-version-from-file
+        - uses: IvanZosimov/setup-go@modules-caching
           with:
-            go-version-file: ./.go-version
+            cache: ${{matrix.caching}}
+            go-version-file: ${{matrix.goMod}}
         - run: go build
