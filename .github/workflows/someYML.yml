@@ -2,6 +2,8 @@ name: Context testing
 on: 
     workflow_dispatch:
     push:
+env:
+    NODE_VERSION: '16.0.0'
 
 jobs:
   first_job:
@@ -10,7 +12,6 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 16.0.0
-      - run: | 
-          $ {{ inputs.first_job }}
+          node-version: $NODE_VERSION
+
 
