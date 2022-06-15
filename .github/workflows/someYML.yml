@@ -10,7 +10,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup go
-        uses: actions/setup-node@cv3
+        uses: actions/setup-node@v3
         with:
           node-version: '13'
 
