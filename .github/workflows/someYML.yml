@@ -16,6 +16,7 @@ jobs:
           ls -ld $RUNNER_TEMP
           cd $RUNNER_TEMP
           mkdir SOME_DIR
+          cd SOME_DIR
           ls -ld
         shell: bash  
 
