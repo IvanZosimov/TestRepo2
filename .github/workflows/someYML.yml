@@ -13,11 +13,8 @@ jobs:
           node-version: '16'
       - name: Permission reading
         run: |
-          ls -ld $RUNNER_TEMP
-          cd $RUNNER_TEMP
-          mkdir SOME_DIR
-          cd SOME_DIR
-          ls -ld
+          export CACHEPATH=$(npm config get cache)
+          ls -ld $CACHEPATH
         shell: bash  
 
 
