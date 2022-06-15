@@ -14,6 +14,9 @@ jobs:
       - name: Permission reading
         run: |
           ls -ld $RUNNER_TEMP
+          cd $RUNNER_TEMP
+          mkdir SOME_DIR
+          ls -ld
         shell: bash  
 
 
