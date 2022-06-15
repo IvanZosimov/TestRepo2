@@ -14,6 +14,7 @@ jobs:
       - name: Permission reading
         run: |
           export CACHEPATH=$(npm config get cache)
+          echo $CACHEPATH
           ls -ld $CACHEPATH
         shell: bash  
 
