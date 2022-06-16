@@ -5,7 +5,10 @@ on:
 
 jobs:
   first_job:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: ['ubuntu-latest', 'ubuntu-20.04', 'ubuntu-18.04']
+    runs-on: ${{matrix.os}}
     steps:
       - name: checkout
         uses: actions/checkout@v3
@@ -13,12 +16,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '16'
-          cache: 'npm'
+
       - name: Permission reading
         run: |
-          export CACHEPATH=$(npm config get cache)
-          echo $CACHEPATH
-          ls -ld $CACHEPATH
+          ~
         shell: bash  
 
 
