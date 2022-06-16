@@ -19,7 +19,7 @@ jobs:
 
       - name: Permission reading
         run: |
-          ~
+          pwd
         shell: bash  
 
 
