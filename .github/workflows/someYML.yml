@@ -7,19 +7,19 @@ jobs:
   first_job:
     strategy:
       matrix:
-        os: ['ubuntu-latest', 'ubuntu-20.04', 'ubuntu-18.04']
-    runs-on: ${{matrix.os}}
+        os: ['8','10', '12', '14', '16', '18']
+    runs-on: ubuntu=latest
     steps:
       - name: checkout
         uses: actions/checkout@v3
       - name: Setup go
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: ${{matrix.os}}
 
       - name: Permission reading
         run: |
-          pwd
+          npm config get cache
         shell: bash  
 
 
