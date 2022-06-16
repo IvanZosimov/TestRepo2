@@ -21,6 +21,8 @@ jobs:
           export usualFolder=$(npm config get cache)
           export newFolder="$usualFolder/newfolder"
           echo $newFolder
+          npm config set cache $newFolder --global
+          npm config get cache
         shell: bash  
 
 
