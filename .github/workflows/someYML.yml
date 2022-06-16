@@ -7,15 +7,15 @@ jobs:
   first_job:
     strategy:
       matrix:
-        os: ['8','10', '12', '14', '16', '18']
-    runs-on: ubuntu-ltest
+        node: ['8','10', '12', '14', '16', '18']
+    runs-on: ubuntu-latest
     steps:
       - name: checkout
         uses: actions/checkout@v3
       - name: Setup go
         uses: actions/setup-node@v3
         with:
-          node-version: ${{matrix.os}}
+          node-version: ${{matrix.node}}
 
       - name: Permission reading
         run: |
