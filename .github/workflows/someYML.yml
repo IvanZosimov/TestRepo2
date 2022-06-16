@@ -18,9 +18,7 @@ jobs:
 
       - name: Change cache location
         run: |
-          export usualFolder=$(npm config get cache)
-          export newFolder="$usualFolder/newfolder"
-          echo $newFolder
+          export newFolder="/home/runner/newfolder/.npm"
           npm config set cache $newFolder --global
           npm config get cache
         shell: bash  
