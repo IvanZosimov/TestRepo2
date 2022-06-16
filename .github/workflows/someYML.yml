@@ -11,17 +11,7 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v3
-      - name: Setup go
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{matrix.node}}
 
-      - name: Change cache location
-        run: |
-          export newFolder="/home/runner/newfolder/.npm"
-          npm config set cache $newFolder --global
-          npm config get cache
-        shell: bash  
 
       - name: Setup go
         uses: actions/setup-node@v3
