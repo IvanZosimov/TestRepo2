@@ -1,13 +1,12 @@
 name: Context testing
 on: 
     workflow_dispatch:
-    push:
 
 jobs:
   first_job:
     strategy:
       matrix:
-        node: ['8','10', '12', '14', '16', '18']
+        node: ['18']
     runs-on: ubuntu-latest
     steps:
       - name: checkout
@@ -17,10 +16,13 @@ jobs:
         with:
           node-version: ${{matrix.node}}
 
-      - name: Permission reading
+      - name: Change cache location
         run: |
-          npm config get cache
+          export usualFolder=$(npm config get cache)
+          export newFolder="$usualFolder/newfolder"
+          echo $newFolder
         shell: bash  
+
 
 
 
