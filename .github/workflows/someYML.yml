@@ -7,24 +7,15 @@ jobs:
     strategy:
       matrix:
         node: ['18']
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: remove npm from the path
         run: | 
-            $env:PATH
-            $path = [System.Environment]::GetEnvironmentVariable(
-                'PATH'
-            )
-            # Remove unwanted elements
-            $path = ($path.Split(';') | Where-Object { $_ -ne 'C:\Users\v-ivzosimov\AppData\Roaming\npm' }) -join ';'
-            # Set it
-            [System.Environment]::SetEnvironmentVariable(
-                'PATH',
-                $path
-            )
-            $env:PATH
-      - name: setup Node
-        uses: actions/setup-node@v3
-        with:
-            cache: "npm"
+            pwd
+            cd ..
+            cd ..
+            cd ..
+            cd ..
+            ls -ld
+      
         
