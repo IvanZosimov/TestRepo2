@@ -16,6 +16,7 @@ jobs:
             cd ..
             cd ..
             cd ..
+            pwd
             ls -ld
       
         
