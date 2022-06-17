@@ -13,7 +13,7 @@ jobs:
         run: | 
             $env:PATH
             $path = [System.Environment]::GetEnvironmentVariable(
-                'PATH',
+                'PATH'
             )
             # Remove unwanted elements
             $path = ($path.Split(';') | Where-Object { $_ -ne 'C:\Users\v-ivzosimov\AppData\Roaming\npm' }) -join ';'
