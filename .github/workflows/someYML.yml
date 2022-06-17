@@ -17,15 +17,19 @@ jobs:
             cd ..
             pwd
             ls -ld
+            mkdir po
             cd ..
             pwd
             ls -ld
+            mkdir po
             cd ..
             pwd
             ls -ld
+            mkdir po
             cd ..
             pwd
             ls -ld
+            mkdir po
  
       
         
