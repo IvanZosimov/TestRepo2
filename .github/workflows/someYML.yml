@@ -12,12 +12,19 @@ jobs:
       - name: remove npm from the path
         run: | 
             pwd
-            cd ..
-            cd ..
-            cd ..
+            ls -ld
             cd ..
             pwd
             ls -ld
-            mkdir runner2
+            cd ..
+            pwd
+            ls -ld
+            cd ..
+            pwd
+            ls -ld
+            cd ..
+            pwd
+            ls -ld
+ 
       
         
