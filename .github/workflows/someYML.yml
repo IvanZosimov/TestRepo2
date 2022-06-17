@@ -23,3 +23,8 @@ jobs:
                 $path
             )
             $env:PATH
+      - name: setup Node
+      - uses: actions/setup-node@v3
+        with:
+            cache: "npm"
+        
