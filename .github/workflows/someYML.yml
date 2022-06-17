@@ -12,4 +12,3 @@ jobs:
       - name: remove npm from the path
         run: | 
             $env:PATH
-        shell: pwsh
