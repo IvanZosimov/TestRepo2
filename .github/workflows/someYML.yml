@@ -14,20 +14,4 @@ jobs:
       - name: Setup go
         uses: actions/setup-node@v3
         with:
-          node-version: ${{matrix.node}}
-          architecture: 'x86'
-
-      - name: Change cache location
-        run: |
-          export newFolder="/newfolder"
-          echo $newFolder
-          npm config set cache $newFolder --global
-          npm config get cache
-        shell: bash 
-
-      - name: Setup go
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{matrix.node}}
-          cache: 'npm'
-
+          cache: "npm"
