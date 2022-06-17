@@ -15,7 +15,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{matrix.node}}
-          arch: 'x86'
+          architecture: 'x86'
 
       - name: Change cache location
         run: |
