@@ -15,29 +15,37 @@ jobs:
             pwd
             ls -ld
             echo mkdir po
-            echo "---------"
-            cd ..
-            pwd
-            ls -ld
             mkdir po
             echo "---------"
             cd ..
             pwd
             ls -ld
+            echo mkdir po
             mkdir po
             echo "---------"
             cd ..
             pwd
             ls -ld
+            echo mkdir po
             mkdir po
             echo "---------"
             cd ..
             pwd
             ls -ld
+            echo mkdir po
+            mkdir po
             echo "---------"
             cd ..
             pwd
             ls -ld
+            echo mkdir po
+            mkdir po
+            echo "---------"
+            cd ..
+            pwd
+            ls -ld
+            echo mkdir po
+            mkdir po
 
   
         
