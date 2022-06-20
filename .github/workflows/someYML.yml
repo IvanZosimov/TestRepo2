@@ -7,7 +7,7 @@ jobs:
     strategy:
       matrix:
         node: ['18']
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - name: remove npm from the path
         run: | 
