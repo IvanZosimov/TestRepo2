@@ -29,6 +29,9 @@ jobs:
             cd ..
             pwd
             ls -ld
+            cd ..
+            pwd
+            ls -ld
             getfacl home
   
         
