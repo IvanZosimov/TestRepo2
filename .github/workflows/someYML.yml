@@ -15,21 +15,26 @@ jobs:
             pwd
             ls -ld
             mkdir po
+            echo "---------"
             cd ..
             pwd
             ls -ld
             mkdir po
+            echo "---------"
             cd ..
             pwd
             ls -ld
             mkdir po
+            echo "---------"
             cd ..
             pwd
             ls -ld
             mkdir po
+            echo "---------"
             cd ..
             pwd
             ls -ld
+            echo "---------"
             cd ..
             pwd
             ls -ld
