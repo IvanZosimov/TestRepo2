@@ -14,7 +14,7 @@ jobs:
             groups
             pwd
             ls -ld
-            mkdir po
+            echo mkdir po
             echo "---------"
             cd ..
             pwd
