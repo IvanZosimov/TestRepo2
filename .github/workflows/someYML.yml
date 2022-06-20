@@ -33,6 +33,6 @@ jobs:
             cd ..
             pwd
             ls -ld
-            getfacl home
+
   
         
