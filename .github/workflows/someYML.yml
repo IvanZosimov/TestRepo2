@@ -29,6 +29,6 @@ jobs:
             cd ..
             pwd
             ls -ld
-            mkdir po
+            getfacl home
   
         
