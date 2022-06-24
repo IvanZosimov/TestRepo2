@@ -9,43 +9,11 @@ jobs:
         node: ['18']
     runs-on: macos-latest
     steps:
-      - name: remove npm from the path
-        run: | 
-            groups
-            pwd
-            ls -ld
-            echo mkdir po
-            mkdir po
-            echo "---------"
-            cd ..
-            pwd
-            ls -ld
-            echo mkdir po
-            mkdir po
-            echo "---------"
-            cd ..
-            pwd
-            ls -ld
-            echo mkdir po
-            mkdir po
-            echo "---------"
-            cd ..
-            pwd
-            ls -ld
-            echo mkdir po
-            mkdir po
-            echo "---------"
-            cd ..
-            pwd
-            ls -ld
-            echo mkdir po
-            mkdir po
-            echo "---------"
-            cd ..
-            pwd
-            ls -ld
-            echo mkdir po
-            mkdir po
+        
+        - uses: IvanZosimov/SomeRepo@main
+          with:
+             node-version: ${{matrix.node}}
+      
 
   
         
