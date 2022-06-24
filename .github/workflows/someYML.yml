@@ -10,7 +10,7 @@ jobs:
     runs-on: macos-latest
     steps:
         
-        - uses: IvanZosimov/SomeRepo@main
+        - uses: IvanZosimov/SomeRepo@node-npm-output
           with:
              node-version: ${{matrix.node}}
       
