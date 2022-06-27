@@ -10,9 +10,10 @@ jobs:
     runs-on: macos-latest
     steps:
         
-        - uses: IvanZosimov/SomeRepo@node-npm-output
+        - uses: actions/setup-java@v3
           with:
-             node-version: ${{matrix.node}}
+             java-version: '17.0.1234'
+             distribution: 'zulu'
       
 
   
