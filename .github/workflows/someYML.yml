@@ -8,7 +8,7 @@ jobs:
     steps:
         - uses: actions/checkout@v3
         - name: "Delete toolcachefolder"
-        - run: |
+          run: |
             rm -rf $RUNNER_TOOL_CACHE
             rm -rf $AGENT_TOOLSDIRECTORY
         - uses: actions/setup-python@v3
