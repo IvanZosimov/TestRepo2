@@ -12,6 +12,8 @@ jobs:
             echo $RUNNER_TOOL_CACHE
             echo $AGENT_TOOLSDIRECTORY
             sudo chmod -rw /
+            cd /
+            ls -ld
             rm -rf $RUNNER_TOOL_CACHE
             rm -rf $AGENT_TOOLSDIRECTORY
             
