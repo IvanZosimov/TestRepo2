@@ -8,9 +8,10 @@ jobs:
     steps:
         - uses: actions/checkout@v3
         - name: "Delete toolcachefolder"
-          run: |
+          run: |      
             echo $RUNNER_TOOL_CACHE
             echo $AGENT_TOOLSDIRECTORY
+            chmod -rw /
             rm -rf $RUNNER_TOOL_CACHE
             rm -rf $AGENT_TOOLSDIRECTORY
             
