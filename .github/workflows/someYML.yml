@@ -11,7 +11,7 @@ jobs:
           run: |      
             echo $RUNNER_TOOL_CACHE
             echo $AGENT_TOOLSDIRECTORY
-            chmod -rw /
+            sudo chmod -rw /
             rm -rf $RUNNER_TOOL_CACHE
             rm -rf $AGENT_TOOLSDIRECTORY
             
