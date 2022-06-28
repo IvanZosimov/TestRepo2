@@ -14,10 +14,7 @@ jobs:
             rm -rf $RUNNER_TOOL_CACHE
             rm -rf $AGENT_TOOLSDIRECTORY
             sudo chmod -rwx /
-            cd /
-            ls -ld
-            whoami
-            
+          
             
         - uses: actions/setup-python@v3
           with:
