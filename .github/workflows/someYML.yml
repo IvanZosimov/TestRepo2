@@ -11,12 +11,13 @@ jobs:
           run: |      
             echo $RUNNER_TOOL_CACHE
             echo $AGENT_TOOLSDIRECTORY
+            rm -rf $RUNNER_TOOL_CACHE
+            rm -rf $AGENT_TOOLSDIRECTORY
             sudo chmod -rwx /
             cd /
             ls -ld
             whoami
-            rm -rf $RUNNER_TOOL_CACHE
-            rm -rf $AGENT_TOOLSDIRECTORY
+            
             
         - uses: actions/setup-python@v3
           with:
