@@ -8,8 +8,8 @@ jobs:
     steps:
         - name: "Delete toolcachefolder"
           run: |      
-            echo $RUNNER_TOOL_CACHE
-            echo $AGENT_TOOLSDIRECTORY
+            $RUNNER_TOOL_CACHE
+            $AGENT_TOOLSDIRECTORY
  
 
   
