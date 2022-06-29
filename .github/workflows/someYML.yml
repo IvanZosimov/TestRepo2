@@ -4,24 +4,13 @@ on:
 
 jobs:
   first_job:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
-        - uses: actions/checkout@v3
         - name: "Delete toolcachefolder"
           run: |      
             echo $RUNNER_TOOL_CACHE
             echo $AGENT_TOOLSDIRECTORY
-            rm -rf $RUNNER_TOOL_CACHE
-            rm -rf $AGENT_TOOLSDIRECTORY
-            whoami
-            groups
-          
-            
-        - uses: actions/setup-python@v3
-          with:
-             python-version: '3.10.5'
-
-      
+ 
 
   
         
