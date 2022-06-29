@@ -4,12 +4,12 @@ on:
 
 jobs:
   first_job:
-    runs-on: self-hosted
+    runs-on: Linux
     steps:
         - name: "Delete toolcachefolder"
           run: |      
-            $Env:RUNNER_TOOL_CACHE
-            $Env:AGENT_TOOLSDIRECTORY
+            $RUNNER_TOOL_CACHE
+            $AGENT_TOOLSDIRECTORY
  
 
   
