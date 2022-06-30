@@ -12,7 +12,7 @@ jobs:
         - uses: IvanZosimov/setup-python@ResolveVersionFix
           with:
 
-            python-version-file: "abb"
+            python-version-file: ".python-version"
             
     
 
