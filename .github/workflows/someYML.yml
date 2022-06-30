@@ -1,15 +1,15 @@
 name: Context testing
 on: 
     workflow_dispatch:
+    push:
 
 jobs:
   first_job:
     runs-on: Linux
     steps:
-        - name: "Delete toolcachefolder"
-          run: |      
-            echo $RUNNER_TOOL_CACHE
-        
+        - name: Checkout
+          uses: actions/checkout@v3
+        - uses: IvanZosimov/setup-python@ResolveVersionFix
  
 
   
