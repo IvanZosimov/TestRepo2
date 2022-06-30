@@ -11,7 +11,9 @@ jobs:
           uses: actions/checkout@v3
         - uses: IvanZosimov/setup-python@ResolveVersionFix
           with:
-            python-version: "abba"
+
+            python-version-file: "abb"
+            
     
 
 
