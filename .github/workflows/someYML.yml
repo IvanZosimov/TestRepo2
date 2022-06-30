@@ -12,7 +12,6 @@ jobs:
         - uses: IvanZosimov/setup-python@ResolveVersionFix
           with:
 
-            python-version-file: ".python-version"
             
     
 
