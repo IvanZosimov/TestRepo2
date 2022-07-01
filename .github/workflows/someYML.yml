@@ -2,16 +2,22 @@ name: Context testing
 on: 
     workflow_dispatch:
     push:
+    
 
 jobs:
+    
+        
   first_job:
+    strategy:
+        matrix:
+            python-version: ['3.6', '3.7', '3.8']
     runs-on: ubuntu-latest
     steps:
         - name: Checkout
           uses: actions/checkout@v3
         - uses: IvanZosimov/setup-python@ResolveVersionFix
           with:
-            python-version-file: "fasdf"
+            python-version: ${{matrix.python-version}}
 
 
             
