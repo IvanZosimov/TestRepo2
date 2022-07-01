@@ -10,12 +10,12 @@ jobs:
   first_job:
     strategy:
         matrix:
-            python-version: ['3.6', '3.7', '3.8']
+            python-version: ['3.6']
     runs-on: ubuntu-latest
     steps:
-        - name: Checkout
+        - name: Checkout ${{matrix.python-version}}
           uses: actions/checkout@v3
-        - uses: IvanZosimov/setup-python@ResolveVersionFix
+        - uses: actions/setup-python@v4
           with:
             python-version: ${{matrix.python-version}}
 
