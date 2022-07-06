@@ -10,10 +10,9 @@ jobs:
   first_job:
     strategy:
         matrix:
-            python-version: ['pypy-3.6', '3.7']
+            python-version: ['pypy-3.6']
     runs-on: 
     - ubuntu-latest
-    - windows-latest
     steps:
         - name: Checkout ${{matrix.python-version}}
           uses: actions/checkout@v3
