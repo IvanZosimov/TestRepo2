@@ -11,10 +11,9 @@ jobs:
     strategy:
         matrix:
             python-version: ['3.9']
-    runs-on: 
-    - ubuntu-latest
-    - windows-latest
-    - macos-latest
+            os: ['ubuntu-latest', 'windows-latest', 'macos-latest']
+    runs-on: ${{matrix.os}}
+   
     steps:
         - uses: actions/setup-python@v4
           with:
