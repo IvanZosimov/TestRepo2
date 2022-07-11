@@ -11,8 +11,8 @@ jobs:
     strategy:
         fail-fast: false
         matrix:
-            python-version: ['3.9.x','3.10.x','3.11.x']
-            os: ['linux']
+            python-version: ['3.8.13']
+            os: ['macos-latest']
             
     runs-on: ${{matrix.os}}
    
@@ -21,7 +21,10 @@ jobs:
         - uses: actions/setup-python@v4
           with:
             python-version: ${{matrix.python-version}}
-            architecture: "x64"
+
+        - run: echo $DISPLAY
+        - run: python ./scripts/tcltk.py
+          shell: bash
 
             
     
