@@ -12,7 +12,7 @@ jobs:
         fail-fast: false
         matrix:
             python-version: ['3.9.x','3.10.x','3.11.x']
-            os: ['ubuntu-latest']
+            os: ['linux']
             
     runs-on: ${{matrix.os}}
    
