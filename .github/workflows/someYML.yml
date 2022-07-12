@@ -5,26 +5,15 @@ on:
     
 
 jobs:
-    
-        
-  first_job:
-    strategy:
-        fail-fast: false
-        matrix:
-            python-version: ['3.8.13']
-            os: ['macos-latest']
-            
-    runs-on: ${{matrix.os}}
-   
+  build:
+    runs-on: ubuntu-latest
     steps:
-        - uses: actions/checkout@v3
-        - uses: actions/setup-python@v4
-          with:
-            python-version: ${{matrix.python-version}}
-
-        - run: echo $DISPLAY
-        - run: python ./scripts/tcltk.py
-          shell: bash
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+      id: cp310
+      with:
+        python-version: "3.8.0 - 3.10.0"
+    - run: echo '${{ steps.cp310.outputs.python-version }}'
 
             
     
