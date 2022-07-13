@@ -15,8 +15,7 @@ jobs:
       id: cp310
       with:
         python-version: "3.8"
-    - run: echo $RUNNER_TOOL_CACHE
-    - run: echo $AGENT_TOOLSDIRECTORY
+    - run: python --version
             
     
 
