@@ -12,7 +12,7 @@ jobs:
     - uses: actions/setup-python@v4
       id: cp310
       with:
-        python-version: "pypy3.7 - pypy3.8"
+        python-version: "pypy3.8-v7.3.6 - pypy3.8-v7.3.9"
     - name: Output version
       run: echo '${{steps.cp310.outputs.python-version}}'
 
