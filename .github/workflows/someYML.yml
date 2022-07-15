@@ -9,13 +9,9 @@ jobs:
     runs-on: self
     steps:
     - uses: actions/checkout@v3
-    - run: echo $RUNNER_TOOL_CACHE
-    - run: echo $AGENT_TOOLSDIRECTORY
-    - uses: actions/setup-python@v4.0.0
-      id: cp310
+    - uses: IvanZosimov/setup-python@pythonversionfile
       with:
         python-version: "3.8"
-    - run: python --version
             
     
 
