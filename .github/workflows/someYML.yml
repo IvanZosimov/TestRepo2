@@ -12,6 +12,7 @@ jobs:
     - uses: IvanZosimov/setup-python@pythonversionfile
       with:
         python-version: "3.8"
+        python-version-file: '.python-version'
             
     
 
