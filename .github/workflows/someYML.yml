@@ -5,13 +5,17 @@ on:
     
 
 jobs:
+    
   build:
+    strategy:
+        matrix:
+            version: ["3.5", "3.7", "3.8", "3.10", "2.7"]
     runs-on: self
     steps:
     - uses: actions/setup-python@v3
       id: cp310
       with: 
-        python-version: '3.6'
+        python-version: ${{matrix.version}}
     - run: |
         ldd "/home/actions-runner/_work/_tool/Python/3.6.15/x64/bin/python"
             
