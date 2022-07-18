@@ -11,15 +11,10 @@ jobs:
         matrix:
             version: ["3.10"]
     runs-on: self
-
-    steps:
-    - uses: actions/setup-python@v4.0.0
-      with:
-        python-version: "3.10"
     - run: |
           echo "${PATH}"
           ldd "${RUNNER_TOOL_CACHE}/Python/3.10.5/x64/bin/python"
-          export PATH="/home/actions_runner"
+          export PATH="$PATH:${RUNNER_TOOL_CACHE}/Python/3.10.5/x64/bin/python"
           echo "${PATH}"
           ldd "${RUNNER_TOOL_CACHE}/Python/3.10.5/x64/bin/python"
        
