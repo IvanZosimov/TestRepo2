@@ -11,16 +11,14 @@ jobs:
         matrix:
             version: ["3.10"]
     runs-on: self
-    env:
-      AGENT_TOOLSDIRECTORY: "/home/actions_runner/toolcache"
+
     steps:
-    - uses: actions/setup-python@v4.0.0
-      id: cp310
-      with: 
-        python-version: ${{matrix.version}}
     - run: |
-          ldd "${AGENT_TOOLSDIRECTORY}/Python/3.10.5/x64/bin/python"
           echo "${RUNNER_TOOL_CACHE}"
+          ldd "${RUNNER_TOOL_CACHE}/Python/3.10.5/x64/bin/python"
+          export RUNNER_TOOL_CACHE = "/home/actions_runner/toolcache"
+          echo "${RUNNER_TOOL_CACHE}"
+          ldd "${RUNNER_TOOL_CACHE}/Python/3.10.5/x64/bin/python"
        
             
 
