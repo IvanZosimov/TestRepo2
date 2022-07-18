@@ -17,10 +17,10 @@ jobs:
       with:
         python-version: "3.10"
     - run: |
-          echo "${RUNNER_TOOL_CACHE}"
+          echo "${PATH}"
           ldd "${RUNNER_TOOL_CACHE}/Python/3.10.5/x64/bin/python"
-          export RUNNER_TOOL_CACHE="/home/actions_runner/toolcache"
-          echo "${RUNNER_TOOL_CACHE}"
+          export PATH="/home/actions_runner"
+          echo "${PATH}"
           ldd "${RUNNER_TOOL_CACHE}/Python/3.10.5/x64/bin/python"
        
             
