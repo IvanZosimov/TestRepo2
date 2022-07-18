@@ -13,9 +13,8 @@ jobs:
       with: 
         python-version: '3.6'
     - run: |
-        $pythonPostfix = "/bin/python"
-        $pythonLoc = $pythonLocation + $pythonPostfix
-        ldd $pythonLoc
+        $pythonLocation = "${pythonLocation}/bin/python"
+        ldd $pythonLocation
             
     
 
