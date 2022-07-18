@@ -13,7 +13,7 @@ jobs:
       with: 
         python-version: '3.6'
     - run: |
-        $pythonLoc = "/home/actions-runner/_work/_tool/Python/3.6.15/x64/bin/python"
+        pythonLoc = "/home/actions-runner/_work/_tool/Python/3.6.15/x64/bin/python"
         ldd $pythonLoc
             
     
