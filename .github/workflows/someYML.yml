@@ -20,6 +20,7 @@ jobs:
           ldd "${RUNNER_TOOL_CACHE}/Python/3.10.5/x64/bin/python"
           file "${RUNNER_TOOL_CACHE}/Python/3.10.5/x64/bin/python"
           readelf -d "${RUNNER_TOOL_CACHE}/Python/3.10.5/x64/bin/python"
+          strace -o out.txt "${RUNNER_TOOL_CACHE}/Python/3.10.5/x64/bin/python" --version; cat out.txt | grep -v "1 ENOENT" | grep "libpython3.10.so.1.0"
 
             
 
