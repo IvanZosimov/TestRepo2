@@ -20,6 +20,7 @@ jobs:
         python-version: ${{matrix.version}}
     - run: |
           ldd "${AGENT_TOOLSDIRECTORY}/Python/3.10.5/x64/bin/python"
+          echo "${RUNNER_TOOL_CACHE}"
        
             
 
