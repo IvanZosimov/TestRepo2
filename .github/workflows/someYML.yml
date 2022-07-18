@@ -13,7 +13,7 @@ jobs:
       with: 
         python-version: '3.6'
     - run: |
-        ldd "${{steps.cp310.outputs.python-path}}"
+
         ldd $pythonLocation
             
     
