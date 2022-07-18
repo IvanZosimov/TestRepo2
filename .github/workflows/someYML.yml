@@ -16,8 +16,8 @@ jobs:
     - run: |
           echo "${PATH}"
           ldd "${RUNNER_TOOL_CACHE}/Python/3.10.5/x64/bin/python"
-          export PATH="$PATH:${RUNNER_TOOL_CACHE}/Python/3.10.5/x64/bin"
-          export PATH="$PATH:${RUNNER_TOOL_CACHE}/Python/3.10.5/x64"
+          export PATH="${RUNNER_TOOL_CACHE}/Python/3.10.5/x64/bin:$PATH"
+          export PATH="${RUNNER_TOOL_CACHE}/Python/3.10.5/x64:$PATH"
           echo "${PATH}"
           ldd "${RUNNER_TOOL_CACHE}/Python/3.10.5/x64/bin/python"
 
