@@ -13,7 +13,7 @@ jobs:
       with: 
         python-version: '3.6'
     - run: |
-        $pythonLocation = "${pythonLocation}/bin/python"
+        $pythonLocation+= "/bin/python"
         ldd $pythonLocation
             
     
