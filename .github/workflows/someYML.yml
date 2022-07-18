@@ -14,7 +14,7 @@ jobs:
     env:
       AGENT_TOOLSDIRECTORY: "home/actions_runner/toolcache"
     steps:
-    - uses: actions/setup-python@v3
+    - uses: actions/setup-python@v4.0.0
       id: cp310
       with: 
         python-version: ${{matrix.version}}
