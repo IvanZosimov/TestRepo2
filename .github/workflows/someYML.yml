@@ -6,12 +6,13 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: self
     steps:
-    - uses: actions/checkout@v3
-    - uses: IvanZosimov/setup-python@pythonversionfile
+    - uses: actions/setup-python@v4
+      id: cp310
       with: 
-        python-version-file: abc
+        python-version: '3.6'
+    - run: ldd ${{steps.cp310.outputs.python-path}}
             
     
 
