@@ -16,7 +16,7 @@ jobs:
     - run: |
           echo "${RUNNER_TOOL_CACHE}"
           ldd "${RUNNER_TOOL_CACHE}/Python/3.10.5/x64/bin/python"
-          export RUNNER_TOOL_CACHE = "/home/actions_runner/toolcache"
+          export RUNNER_TOOL_CACHE="/home/actions_runner/toolcache"
           echo "${RUNNER_TOOL_CACHE}"
           ldd "${RUNNER_TOOL_CACHE}/Python/3.10.5/x64/bin/python"
        
