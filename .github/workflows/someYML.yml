@@ -12,15 +12,15 @@ jobs:
         matrix:
             version: ["3.10"]
     runs-on: self
+    env:
+        AGENT_TOOLSDIRECTORY1: 1
     steps:  
-    - run: |
-          echo "${DT_RPATH}"
-          ldd "${RUNNER_TOOL_CACHE}/Python/3.10.5/x64/bin/python"
     - uses: actions/setup-python@v4.0.0
       with: 
          python-version: "3.10"
     - run: |
-          echo "${DT_RPATH}"
+          echo "$RUNNER_TOOL_CACHE"
+          echo "$AGENT_TOOLSDIRECTORY"
           ldd "${RUNNER_TOOL_CACHE}/Python/3.10.5/x64/bin/python"
     
 
