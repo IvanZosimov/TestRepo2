@@ -17,7 +17,7 @@ jobs:
     steps:
     - run: |
          cd /Users/runner/hostedtoolcache
-         sudo mkdir new
+         mkdir new
     - uses: actions/setup-python@v4.0.0
       with: 
          python-version: "3.10"
