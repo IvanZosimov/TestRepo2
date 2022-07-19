@@ -21,7 +21,7 @@ jobs:
     - run: |
           echo "$RUNNER_TOOL_CACHE"
           echo "$AGENT_TOOLSDIRECTORY"
-          ldd "${RUNNER_TOOL_CACHE}/Python/3.10.5/x64/bin/python"
+          otool -L "${RUNNER_TOOL_CACHE}/Python/3.10.5/x64/bin/python"
     
 
        
