@@ -19,7 +19,7 @@ jobs:
       with: 
          python-version: "3.10"
     - run: |
-          cd "/Users/runner/hostedtoolcache"
+          cd /Users/runner/hostedtoolcache
           sudo mkdir 1
           cs $GITHUB_WORKSPACE
           echo "$RUNNER_TOOL_CACHE"
