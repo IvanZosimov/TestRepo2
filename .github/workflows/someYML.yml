@@ -11,13 +11,11 @@ jobs:
     strategy:
         matrix:
             version: ["3.10"]
-    runs-on: macos-latest
+    runs-on: macOS
     env:
-        AGENT_TOOLSDIRECTORY: "/Users/runner/hostedtoolcache/new"
+        AGENT_TOOLSDIRECTORY1: "/Users/runner/hostedtoolcache/new"
     steps:
-    - run: |
-         cd /Users/runner/hostedtoolcache
-         mkdir new
+
     - uses: actions/setup-python@v4.0.0
       with: 
          python-version: "3.10"
