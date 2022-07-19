@@ -17,6 +17,8 @@ jobs:
           echo "${DT_RPATH}"
           ldd "${RUNNER_TOOL_CACHE}/Python/3.10.5/x64/bin/python"
     - uses: actions/setup-python@v4.0.0
+      with: 
+         python-version: "3.10"
     - run: |
           echo "${DT_RPATH}"
           ldd "${RUNNER_TOOL_CACHE}/Python/3.10.5/x64/bin/python"
