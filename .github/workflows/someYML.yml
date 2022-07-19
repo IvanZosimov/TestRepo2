@@ -21,7 +21,7 @@ jobs:
     - run: |
           cd /Users/runner/hostedtoolcache
           sudo mkdir 1
-          cs $GITHUB_WORKSPACE
+          cd $GITHUB_WORKSPACE
           echo "$RUNNER_TOOL_CACHE"
           echo "$AGENT_TOOLSDIRECTORY"
           otool -L "${RUNNER_TOOL_CACHE}/Python/3.10.5/x64/bin/python"
