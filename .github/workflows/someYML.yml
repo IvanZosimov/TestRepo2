@@ -11,7 +11,7 @@ jobs:
     strategy:
         matrix:
             version: ["3.10"]
-    runs-on: self
+    runs-on: macos-latest
     env:
         AGENT_TOOLSDIRECTORY1: 1
     steps:  
