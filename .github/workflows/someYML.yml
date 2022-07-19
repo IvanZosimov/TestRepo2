@@ -13,15 +13,15 @@ jobs:
             version: ["3.10"]
     runs-on: macos-latest
     env:
-        AGENT_TOOLSDIRECTORY1: "/Users/runner/hostedtoolcache/1"
-    steps:  
+        AGENT_TOOLSDIRECTORY1: "/Users/runner/hostedtoolcache/new"
+    steps:
+    - run: |
+         cd /Users/runner/hostedtoolcache
+         sudo mkdir new
     - uses: actions/setup-python@v4.0.0
       with: 
          python-version: "3.10"
     - run: |
-          cd /Users/runner/hostedtoolcache
-          sudo mkdir 1
-          cd $GITHUB_WORKSPACE
           echo "$RUNNER_TOOL_CACHE"
           echo "$AGENT_TOOLSDIRECTORY"
           otool -L "${RUNNER_TOOL_CACHE}/Python/3.10.5/x64/bin/python"
