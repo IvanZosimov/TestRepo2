@@ -15,7 +15,7 @@ jobs:
     steps:
     - run: |
         echo "$RUNNER_TOOL_CACHE"
-    - uses: IvanZosimov/setup-python@main
+    - uses: actions/setup-python@v4.0.0
       with: 
          python-version: "3.9"
     - run: |
