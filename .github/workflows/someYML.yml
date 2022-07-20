@@ -16,7 +16,7 @@ jobs:
         AGENT_TOOLSDIRECTORY1: "/Users/runner/hostedtoolcache/new"
     steps:
 
-    - uses: IvanZosimov/setup-python@main
+    - uses: actions/setup-python@4.0.0
       with: 
          python-version: "3.10"
     - run: |
