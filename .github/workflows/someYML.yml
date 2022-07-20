@@ -15,10 +15,9 @@ jobs:
     steps:
     - run: |
         echo "$RUNNER_TOOL_CACHE"
-        rm -rf "/Users/github/Desktop/SH-runner/_work/_tool/Python"
     - uses: IvanZosimov/setup-python@main
       with: 
-         python-version: "3.10.5"
+         python-version: "3.9"
     - run: |
           echo "$RUNNER_TOOL_CACHE"
           echo "$AGENT_TOOLSDIRECTORY"
