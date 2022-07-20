@@ -19,7 +19,7 @@ jobs:
         echo "$RUNNER_TOOL_CACHE"
     - uses: IvanZosimov/setup-python@patch
       with: 
-         python-version: "3.8"
+         python-version: "3.10.5"
     - run: |
           echo "$RUNNER_TOOL_CACHE"
           echo "$AGENT_TOOLSDIRECTORY"
