@@ -12,6 +12,8 @@ jobs:
         matrix:
             version: ["3.10"]
     runs-on: macos
+    env:
+        AGENT_TOOLSDIRECTORY: "/Users/github/Desktop/SH-runner/_work/_tool"
     steps:
     - run: |
         echo "$RUNNER_TOOL_CACHE"
