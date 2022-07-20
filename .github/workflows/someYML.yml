@@ -15,9 +15,9 @@ jobs:
     steps:
     - run: |
         echo "$RUNNER_TOOL_CACHE"
-    - uses: actions/setup-python@v4.0.0
+    - uses: IvanZosimov/setup-python@patch
       with: 
-         python-version: "3.9"
+         python-version: "3.8"
     - run: |
           echo "$RUNNER_TOOL_CACHE"
           echo "$AGENT_TOOLSDIRECTORY"
