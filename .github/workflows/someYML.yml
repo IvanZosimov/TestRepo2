@@ -12,13 +12,11 @@ jobs:
         matrix:
             version: ["3.10"]
     runs-on: macos
-    env:
-        AGENT_TOOLSDIRECTORY1: "/Users/runner/hostedtoolcache/new"
     steps:
-
-    - uses: actions/setup-python@v4.0.0
+    - run: echo "$RUNNER_TOOL_CACHE"
+    - uses: IvanZosimov/setup-python@main
       with: 
-         python-version: "3.10"
+         python-version: "3.10.5"
     - run: |
           echo "$RUNNER_TOOL_CACHE"
           echo "$AGENT_TOOLSDIRECTORY"
