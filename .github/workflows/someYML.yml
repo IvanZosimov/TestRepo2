@@ -13,7 +13,9 @@ jobs:
             version: ["3.10"]
     runs-on: ubuntu-latest
     steps:
-    - run: ps -p $$
+    - run: |
+        ps -p $$
+        ps -p $$
     - run: ps -p $$
 
     - uses: actions/setup-python@v4
