@@ -11,19 +11,13 @@ jobs:
     strategy:
         matrix:
             version: ["3.10"]
-    runs-on: macos
-    env:
-        AGENT_TOOLSDIRECTORY: "/Users/github/Desktop/SH-runner/_work/_tool"
+    runs-on: ubuntu-latest
     steps:
-    - run: |
-        echo "$RUNNER_TOOL_CACHE"
+
     - uses: IvanZosimov/setup-python@patch
       with: 
-         python-version: "3.10.5"
-    - run: |
-          echo "$RUNNER_TOOL_CACHE"
-          echo "$AGENT_TOOLSDIRECTORY"
-          otool -L "${RUNNER_TOOL_CACHE}/Python/3.10.5/x64/bin/python"
+         python-version: "3.11-dev"
+
 
     
 
