@@ -11,9 +11,13 @@ jobs:
     runs-on: ubuntu-latest
  
     steps:
-    - run: dotnet --info
+    - run: |
+        dotnet --info
+        echo "$DOTNET_ROOT"
     - uses: actions/setup-dotnet@v2
       with: 
          dotnet-version: 3.1
-    - run: dotnet --info
+    - run: |
+        dotnet --info
+        echo "$DOTNET_ROOT"
    
