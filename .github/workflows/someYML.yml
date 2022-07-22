@@ -14,25 +14,8 @@ jobs:
             os: ["macos-latest"]
     runs-on: ${{matrix.os}}
     steps:
-    - run: echo "$RUNNER_TOOL_CACHE"     
-    - uses: actions/setup-python@v4
+ 
+    - uses: actions/setup-dotnetn@v2
       with: 
-         python-version: ${{matrix.version}}
-    - name: python3
-      env:
-        SYSTEM_VERSION_COMPAT: 0
-    
-      run: |
-          which python3
-          which pip3
-          pip3 debug -v|grep -v macosx_10_
-          python3 -c 'import platform;print(platform.mac_ver())'
-
-
-    
-
-       
-            
-
-  
-        
+         dotnet-version: 6.0.0
+   
