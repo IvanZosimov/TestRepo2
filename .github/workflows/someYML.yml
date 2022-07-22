@@ -8,10 +8,8 @@ on:
 jobs:
     
   test:
-    runs-on:
-      - ubuntu-latest
-      - macos-latest
-      - windows-latest
+    runs-on: macos-latest
+ 
     steps:
     - run: dotnet --info
     - uses: actions/setup-dotnet@v2
