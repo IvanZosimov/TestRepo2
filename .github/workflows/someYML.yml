@@ -14,12 +14,12 @@ jobs:
             os: ["self"]
     runs-on: ${{matrix.os}}
     steps:
-    - name: setup-python
-      env:
-        AGENT_TOOLSDIRECTORY: "/opt/hostedtoolcache1"
+         
     - uses: IvanZosimov/setup-python@opt-toolcache
       with: 
          python-version: ${{matrix.version}}
+      env:
+        AGENT_TOOLSDIRECTORY: "/opt/hostedtoolcache1"
 
 
     
