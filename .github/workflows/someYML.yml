@@ -11,16 +11,12 @@ jobs:
     strategy:
         matrix:
             version: ["3.10"]
+            os: ["ubuntu-latest", "macos-latest", "windows-latest"]
     runs-on: ubuntu-latest
     steps:
-    - run: |
-        ps -p $$
-        ps -p $$
-    - run: ps -p $$
-
-    - uses: actions/setup-python@v4
+    - uses: IvanZosimov/setup-python@opt-toolcache
       with: 
-         python-version: "3.10-dev"
+         python-version: ${{matrix.version}}
 
 
     
