@@ -12,7 +12,7 @@ jobs:
         matrix:
             version: ["3.10"]
             os: ["ubuntu-latest", "macos-latest", "windows-latest"]
-    runs-on: ubuntu-latest
+    runs-on: ${{matrix.os}}
     steps:
     - uses: IvanZosimov/setup-python@opt-toolcache
       with: 
