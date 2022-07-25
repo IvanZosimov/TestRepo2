@@ -7,17 +7,26 @@ on:
 
 jobs:
     
-  test:
-    runs-on: ubuntu-latest
- 
+  build:
+  
+    runs-on: ${{ matrix.os }}
+    environment: build
+    permissions:
+      contents: write
+
+    strategy:
+      matrix:
+        os: [ macos-12 ]
+
     steps:
-    - run: |
-        dotnet --info
-        echo "$DOTNET_ROOT"
-    - uses: actions/setup-dotnet@v2
-      with: 
-         dotnet-version: 3.1
-    - run: |
-        dotnet --info
-        echo "$DOTNET_ROOT"
-   
+     
+      - uses: actions/checkout@v3
+        with:
+          submodules: recursive
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+          architecture: "x64"
+          cache: 'pip'
+      - run: |
+          pip install -r requirements.txt
