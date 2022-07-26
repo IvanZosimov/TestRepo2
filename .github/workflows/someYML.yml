@@ -20,5 +20,5 @@ jobs:
         with:
           python-version: '3.6'
         env:
-            AGENT_TOOLSDIRECTORY: ${HOME}
+            AGENT_TOOLSDIRECTORY: env.GITHUB_WORKSPACE
 
