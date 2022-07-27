@@ -15,7 +15,10 @@ jobs:
         os: [ ubuntu-latest, macos-latest, windows-latest ]
 
     steps:
-     
-      - run: |
-          echo ${{ secrets.SECRET1 }}
-          echo ${{ secrets.SECRET1 }} | sed 's/./&‎/g'
+  
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+      id: cp310
+      with:
+        python-version: ${{SECRET1}}
+    - run: echo '${{ steps.cp310.outputs.python-version }}'
