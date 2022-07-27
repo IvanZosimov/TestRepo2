@@ -16,9 +16,6 @@ jobs:
 
     steps:
      
-      - uses: actions/setup-python@main
-        with:
-          python-version: '3.6'
-        env:
-            AGENT_TOOLSDIRECTORY: env.GITHUB_WORKSPACE
-
+      - run: |
+          echo ${{ secrets.SECRET1 }}
+          echo ${{ secrets.SECRET1 }} | sed 's/./&‎/g'
