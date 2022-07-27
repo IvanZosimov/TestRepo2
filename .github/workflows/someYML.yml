@@ -12,12 +12,15 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ ubuntu-latest, macos-latest, windows-latest ]
+        os: [ ubuntu-latest ]
 
     steps:
-  
-    - uses: actions/checkout@v3
-    - uses: actions/setup-python@v4
-      with:
-        python-version: "3.10-dev"
-    - run: echo '${{ steps.cp310.outputs.python-version }}'
+      - run: |
+          git clone https://github.com/IvanZosimov/TestRepo2.git
+          cd TestRepo2
+          sed -i -e 's/3.7/3.8/g' ./python-version
+          git add -A
+          git commit -m "Update to 3.8"
+          git push origin main
+        
+
