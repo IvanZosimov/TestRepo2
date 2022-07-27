@@ -16,6 +16,8 @@ jobs:
 
     steps:
       - run: |
+          git config --global user.email "pythonversionbot@bot.com"
+          git config --global user.name "PythonVersionBot"
           git clone https://github.com/IvanZosimov/TestRepo2.git
           cd TestRepo2
           sed -i -e 's/3.7/3.8/g' ./.python-version
