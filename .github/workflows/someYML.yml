@@ -15,14 +15,12 @@ jobs:
         os: [ ubuntu-latest ]
 
     steps:
+      - uses: actions/setup-dotnet@v2
+      - uses: actions/checkout@v3
       - run: |
-          git config --global user.email "pythonversionbot@bot.com"
-          git config --global user.name "IvanZosimov"
-          git clone https://github.com/IvanZosimov/TestRepo2.git
-          cd TestRepo2
-          sed -i -e 's/3.7/3.8/g' ./.python-version
-          git add -A
-          git commit -m "Update to 3.8"
-          git push origin main
+            cd ConsoleApp3
+            dotnet --info
+            dotnet run
         
+      
 
