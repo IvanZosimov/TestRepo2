@@ -18,7 +18,7 @@ jobs:
       - run: |
           git clone https://github.com/IvanZosimov/TestRepo2.git
           cd TestRepo2
-          sed -i -e 's/3.7/3.8/g' ./python-version
+          sed -i -e 's/3.7/3.8/g' ./.python-version
           git add -A
           git commit -m "Update to 3.8"
           git push origin main
