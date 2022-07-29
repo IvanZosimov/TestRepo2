@@ -13,16 +13,13 @@ jobs:
     strategy:
       matrix:
         os: [ ubuntu-latest ]
+        vs: [ "3.8", "3.8-dev"]
 
     steps:
-      - uses: actions/setup-dotnet@v2
+      - uses: actions/setup-python@v4
         with: 
-            dotnet-version: '5.0.408'
-      - uses: actions/checkout@v3
-      - run: |
-            cd ConsoleApp3
-            dotnet --info
-            dotnet run
+            python-version: ${{matrix.vs}}
+      
         
       
 
