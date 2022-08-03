@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         os: [ ubuntu-latest ]
-        vs: [ "3.8", "3.8-dev"]
+        vs: [ "3.7.3"]
 
     steps:
       - uses: actions/setup-python@v4
