@@ -16,7 +16,7 @@ jobs:
         vs: [ "6.x"]
 
     steps:
-      - uses: actions/setup-dotnetn@v2
+      - uses: actions/setup-dotnet@v2
         with: 
             dotnet-version: ${{matrix.vs}}
             include-prerelease: true
