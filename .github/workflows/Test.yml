@@ -16,9 +16,10 @@ jobs:
         vs: [ "7.0.x"]
 
     steps:
-      - uses: actions/setup-dotnet@v2
+      - uses: actions/setup-python@v4
         with: 
-            dotnet-version: ${{matrix.vs}}
+            python-version: "3.10"
+            cache: "pip"
 
       
         
