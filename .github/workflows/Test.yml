@@ -19,7 +19,7 @@ jobs:
       - uses: actions/setup-dotnet@v2
         with: 
             dotnet-version: ${{matrix.vs}}
-            include-prerelease: true
+
       
         
       
