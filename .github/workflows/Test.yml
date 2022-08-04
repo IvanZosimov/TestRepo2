@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         os: [ ubuntu-latest ]
-        vs: [ "7.x"]
+        vs: [ "7.0.x"]
 
     steps:
       - uses: actions/setup-dotnet@v2
