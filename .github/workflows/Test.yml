@@ -13,12 +13,13 @@ jobs:
     strategy:
       matrix:
         os: [ ubuntu-latest ]
-        vs: [ "3.7.3"]
+        vs: [ "6.x"]
 
     steps:
-      - uses: actions/setup-python@v4
+      - uses: actions/setup-dotnetn@v2
         with: 
-            python-version: ${{matrix.vs}}
+            dotnet-version: ${{matrix.vs}}
+            include-prerelease: true
       
         
       
