@@ -17,10 +17,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
+      - uses: IvanZosimov/setup-dotnet@ADRdotnet
         with: 
-            python-version: "3.9-dev"
-            check-latest: true
+            dotnet-version: "7.0"
+            dotnet-quality: "some"
 
       
         
