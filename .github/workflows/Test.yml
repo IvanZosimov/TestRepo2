@@ -22,9 +22,10 @@ jobs:
             dotnet-version: |
                7.0
                6.0.x
-               6.0.1xx
+               6.0.1**
                6.0.*
                6.0.400
+               bulka
             dotnet-quality: "preview"
                           
       - run: dotnet --info
