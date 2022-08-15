@@ -25,6 +25,7 @@ jobs:
                6.0.4xx
                6.0.*
                6.0.400
+            dotnet-quality: "preview"
                           
       - run: dotnet --info
 
