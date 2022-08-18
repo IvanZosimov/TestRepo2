@@ -23,7 +23,9 @@ jobs:
                 7.0.x
             dotnet-quality: "preview"
                          
-      - run: dotnet --info
+      - run: |
+            dotnet --info
+            ls "C:\Program Files\dotnet\sdk\host\fxr"
 
       
         
