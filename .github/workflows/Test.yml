@@ -38,8 +38,8 @@ jobs:
           NUGET_AUTH_TOKEN: NOTATOKEN
       - name: Verify dotnet
         run: |
-            dotnet --version
-            dotnet --info
+            /usr/share/dotnet --version
+            /usr/share/dotnet --info
 
 
       
