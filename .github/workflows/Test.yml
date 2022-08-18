@@ -4,21 +4,23 @@ on:
     workflow_dispatch:
     push:
     
-
 jobs:
     
-  test:
+  build:
+  
     runs-on: ubuntu-latest
-    
+
+
     steps:
-      - name: Setup dotnet 3.1
-        uses: IvanZosimov/setup-dotnet@ADRdotnet
-        with:
-          dotnet-version: '3.1'
-      - name: Verify dotnet
-        run: |
-            /usr/share/dotnet --version
-            /usr/share/dotnet --info
+      - uses: actions/checkout@v3
+      - uses: IvanZosimov/setup-dotnet@ADRdotnet
+        with: 
+            dotnet-version: |
+                '7.0.x'
+                '6.0'
+      - run: |
+            dotnet --info
+        
 
 
       
