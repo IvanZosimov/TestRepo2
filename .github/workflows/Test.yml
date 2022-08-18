@@ -12,7 +12,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ windows-latest ]
+        os: [ windows-latest, ubuntu-latest, macos-latest ]
         vs: [ "7.0.x"]
 
     steps:
@@ -25,7 +25,7 @@ jobs:
                          
       - run: |
             dotnet --info
-            ls "C:\Program Files\dotnet\sdk\host"
+            ls "C:\Program Files\dotnet\sdk"
 
       
         
