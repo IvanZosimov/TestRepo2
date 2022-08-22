@@ -16,7 +16,7 @@ jobs:
       - uses: IvanZosimov/setup-dotnet@ADRdotnet
         with: 
             dotnet-version: '2.1'
-            dotnet-quality: ""
+            dotnet-quality: " "
       - run: |
             dotnet --info
         
