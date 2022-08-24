@@ -6,18 +6,20 @@ on:
     
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ${{matrix.os}}
     strategy:
       matrix:
         dotnet: ['5.0.x' ]
+        os: ['windows-latest', 'macos-latest', 'linux-latest']
+        quality: ["preview", "daily", "signed", "validated"]
     name: Dotnet ${{ matrix.dotnet }} sample
     steps:
       - uses: actions/checkout@v3
-      - name: Setup dotnet
+      - name: ${{matrix.os}} ${{matrix.quality}}
         uses: IvanZosimov/setup-dotnet@ADRdotnet
         with:
           dotnet-version: ${{ matrix.dotnet }}
-          dotnet-quality: "preview"
+          dotnet-quality: ${{matrix.quality}}
       - run: |
             dotnet --version
             dotnet --info      
