@@ -7,6 +7,7 @@ on:
 jobs:
   build:
     runs-on: ${{matrix.os}}
+    continue-on-error: true
     strategy:
       matrix:
         dotnet: ['5.0.x' ]
@@ -15,14 +16,20 @@ jobs:
     name: Dotnet ${{ matrix.dotnet }} sample
     steps:
       - uses: actions/checkout@v3
+        continue-on-error: true
+        
       - name: ${{matrix.os}} ${{matrix.quality}}
+        continue-on-error: true
         uses: IvanZosimov/setup-dotnet@ADRdotnet
+        
+        
         with:
           dotnet-version: ${{ matrix.dotnet }}
           dotnet-quality: ${{matrix.quality}}
       - run: |
             dotnet --version
-            dotnet --info      
+            dotnet --info
+        continue-on-error: true
 
 
       
