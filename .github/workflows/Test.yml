@@ -17,7 +17,9 @@ jobs:
         uses: IvanZosimov/setup-dotnet@ADRdotnet
         with:
           dotnet-version: ${{ matrix.dotnet }}
-      - run: dotnet --info      
+      - run: |
+            dotnet --version
+            dotnet --info      
 
 
       
