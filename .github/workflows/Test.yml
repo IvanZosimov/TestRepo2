@@ -10,9 +10,9 @@ jobs:
     continue-on-error: true
     strategy:
       matrix:
-        dotnet: ['5.0.x' ]
+        dotnet: ['5.0.x', "6.0", ""]
         os: ['windows-latest', 'macos-latest', 'ubuntu-latest']
-        quality: ["preview", "daily", "signed", "validated"]
+        quality: ["preview"]
     name: Dotnet ${{ matrix.dotnet }} sample
     steps:
       - uses: actions/checkout@v3
