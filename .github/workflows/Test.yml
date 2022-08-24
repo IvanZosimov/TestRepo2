@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         dotnet: ['5.0.x' ]
-        os: ['windows-latest', 'macos-latest', 'linux-latest']
+        os: ['windows-latest', 'macos-latest', 'ubuntu-latest']
         quality: ["preview", "daily", "signed", "validated"]
     name: Dotnet ${{ matrix.dotnet }} sample
     steps:
