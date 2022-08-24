@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: IvanZosimov/setup-dotnet@ADRdotnet
         with: 
-            dotnet-version: '3.x'
+            dotnet-version: '*'
       - run: |
             dotnet --info
         
