@@ -10,8 +10,8 @@ jobs:
     continue-on-error: true
     strategy:
       matrix:
-        dotnet: ['5.0.x', "6.0", ""]
-        os: ['windows-latest', 'macos-latest', 'ubuntu-latest']
+        dotnet: ["*"]
+        os: ['ubuntu-latest']
         quality: ["preview"]
     name: Dotnet ${{ matrix.dotnet }} sample
     steps:
