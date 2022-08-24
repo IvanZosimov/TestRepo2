@@ -17,6 +17,7 @@ jobs:
         uses: IvanZosimov/setup-dotnet@ADRdotnet
         with:
           dotnet-version: ${{ matrix.dotnet }}
+          dotnet-quality: "preview"
       - run: |
             dotnet --version
             dotnet --info      
