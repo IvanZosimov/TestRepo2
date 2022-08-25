@@ -10,9 +10,8 @@ jobs:
     continue-on-error: true
     strategy:
       matrix:
-        dotnet: ["", " ", "*"]
+        dotnet: ["6.0.400"]
         os: ['ubuntu-latest']
-        quality: ["preview"]
     name: Dotnet ${{ matrix.dotnet }} sample
     steps:
       - uses: actions/checkout@v3
@@ -21,13 +20,10 @@ jobs:
       - name: ${{matrix.os}} ${{matrix.quality}}
 
         uses: IvanZosimov/setup-dotnet@ADRdotnet
-        
-        
+                
         with:
           dotnet-version: ${{ matrix.dotnet }}
-          dotnet-quality: ${{matrix.quality}}
       - run: |
-            dotnet --version
             dotnet --info
 
 
