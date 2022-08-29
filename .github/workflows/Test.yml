@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         dotnet: ["2.1.x"]
-        os: ['ubuntu-latest','macos-latest', 'windows-latest']
+        os: ['ubuntu-latest']
     name: Dotnet ${{ matrix.dotnet }} sample
     steps:
       - uses: actions/checkout@v3
@@ -19,12 +19,11 @@ jobs:
         
       - name: ${{matrix.os}} ${{matrix.quality}}
 
-        uses: actions/setup-dotnet@main
-                
+        uses: IvanZosimov/setup-dotnet@ADRdotnet            
         with:
           dotnet-version: ${{ matrix.dotnet }}
       - run: |
-            dotnet --info
+            dotnet --version
 
 
 
