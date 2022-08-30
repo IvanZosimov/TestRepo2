@@ -24,7 +24,7 @@ jobs:
         with:
           dotnet-version: ${{ matrix.dotnet }}
       - run: |
-            - run: echo '${{ steps.cp310.outputs.dotnet-version }}'
+             echo '${{ steps.cp310.outputs.dotnet-version }}'
     
 
 
