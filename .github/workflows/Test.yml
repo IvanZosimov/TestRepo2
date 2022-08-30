@@ -18,12 +18,15 @@ jobs:
         
       - name: ${{matrix.os}} ${{matrix.quality}}
 
-        uses: actions/setup-dotnet@v2 
+        uses: IvanZosimov/setup-dotnet@dotnetOutput
+        id: cp310
         with:
           dotnet-version: | 
             2.1.x
+            7.0.x
+            3.1.x
       - run: |
-             dotnet --version
+            echo '${{ steps.cp310.outputs.dotnet-version }}'
     
 
 
