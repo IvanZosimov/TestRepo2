@@ -18,10 +18,9 @@ jobs:
         
       - name: ${{matrix.os}} ${{matrix.quality}}
 
-        uses: IvanZosimov/setup-dotnet@ADRdotnet
+        uses: actions/setup-node@main
 
         with:
-          dotnet-version: "6.x"
-          dotnet-quality: "daily"
+          node-version: "x"
       - run: |
-            dotnet --info
+            node --version
