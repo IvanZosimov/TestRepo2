@@ -18,9 +18,9 @@ jobs:
         
       - name: ${{matrix.os}} ${{matrix.quality}}
 
-        uses: actions/setup-node@main
+        uses: IvanZosimov/setup-dotnete@ADRdotnet
 
         with:
-          node-version: "x"
+          dotnet-version: "x"
       - run: |
             node --version
