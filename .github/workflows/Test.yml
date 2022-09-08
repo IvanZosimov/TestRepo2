@@ -18,7 +18,7 @@ jobs:
         
       - name: ${{matrix.os}} ${{matrix.quality}}
 
-        uses: IvanZosimov/setup-dotnete@ADRdotnet
+        uses: IvanZosimov/setup-dotnet@ADRdotnet
 
         with:
           dotnet-version: "x"
