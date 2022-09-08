@@ -22,8 +22,8 @@ jobs:
 
         with:
           dotnet-version: |
-            "x"
-            "X"
-            "*"
+            x
+            X
+            *
       - run: |
             node --version
