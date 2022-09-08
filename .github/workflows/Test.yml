@@ -23,7 +23,7 @@ jobs:
         with:
           dotnet-version: |
             x
-            X
-            *
+          dotnet-quality: "preview"
+
       - run: |
             node --version
