@@ -21,6 +21,9 @@ jobs:
         uses: IvanZosimov/setup-dotnet@ADRdotnet
 
         with:
-          dotnet-version: "x"
+          dotnet-version: |
+            "x"
+            "X"
+            "*"
       - run: |
             node --version
