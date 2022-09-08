@@ -18,11 +18,9 @@ jobs:
         
       - name: ${{matrix.os}} ${{matrix.quality}}
 
-        uses: IvanZosimov/setup-node@Caching
+        uses: IvanZosimov/setup-dotnet@ADRdotnet
 
         with:
-          node-version: "16"
-          cache: "npm"
-
+          dotnet-version: "3.x"
       - run: |
-            npm ci
+            dotnet --info
