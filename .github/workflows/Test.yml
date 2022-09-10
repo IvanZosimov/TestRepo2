@@ -22,7 +22,7 @@ jobs:
 
         with:
           dotnet-version: |
-            x     
+            *     
 
       - run: |
             node --version
