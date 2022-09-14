@@ -18,11 +18,12 @@ jobs:
         
       - name: ${{matrix.os}} ${{matrix.quality}}
 
-        uses: IvanZosimov/setup-dotnet@ADRdotnet
+        uses: actions/setup-dotnet@v2
 
         with:
           dotnet-version: |
             7.x
+          include-prerelease: false
             
 
       - run: |
