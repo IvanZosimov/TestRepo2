@@ -22,7 +22,7 @@ jobs:
 
         with:
           dotnet-version: |
-            7.x
+            5.x
           include-prerelease: true
             
 
