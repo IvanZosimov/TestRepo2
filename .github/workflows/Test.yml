@@ -16,6 +16,4 @@ jobs:
           
 
       - run: |
-            which dotnet
-            which msbuild
-            which dotnet build
+            ls "/usr/local/bin/dotnet"
