@@ -10,21 +10,12 @@ jobs:
     continue-on-error: true
     strategy:
       matrix:
-        os: ['ubuntu-latest']
+        os: ['macos-latest']
     name: Dotnet sample
     steps:
-      - uses: actions/checkout@v3
-
-        
-      - name: ${{matrix.os}} ${{matrix.quality}}
-
-        uses: actions/setup-dotnet@v2
-
-        with:
-          dotnet-version: |
-            5.x
-          include-prerelease: true
-            
+          
 
       - run: |
-            node --version
+            which dotnet
+            which msbuild
+            which dotnet build
