@@ -16,4 +16,4 @@ jobs:
           
 
       - run: |
-            ls /Library/Frameworks
+            ls /Library/Frameworks/Xamarin.Android.framework
