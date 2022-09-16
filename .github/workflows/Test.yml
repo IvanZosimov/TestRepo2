@@ -16,4 +16,4 @@ jobs:
           
 
       - run: |
-            ls /Library/Frameworks/Xamarin.Android.framework
+            ls /Library/Frameworks/Xamarin.Android.framework/Versions/Current/lib/msbuild
