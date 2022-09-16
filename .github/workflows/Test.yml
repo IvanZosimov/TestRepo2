@@ -15,7 +15,9 @@ jobs:
     steps:
           
     - name: Test PWSH
-      shell: pwsh
-      run: $PSVersionTable
+      shell: bash
+      run: | 
+        which powershell
+        which pwsh
       
 
