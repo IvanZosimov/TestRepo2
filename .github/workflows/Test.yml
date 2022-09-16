@@ -10,10 +10,12 @@ jobs:
     continue-on-error: true
     strategy:
       matrix:
-        os: ['macos-latest']
+        os: ['macos-latest', 'ubuntu-latest', 'windows-latest']
     name: Dotnet sample
     steps:
           
+    - name: Test PWSH
+      shell: pwsh
+      run: $PSVersionTable
+      
 
-      - run: |
-            find /Library/Frameworks/Xamarin.Android.framework/Versions/Current/lib -name "Xamarin.Android.CSharp.targets"
