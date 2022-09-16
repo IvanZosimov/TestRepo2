@@ -16,4 +16,4 @@ jobs:
           
 
       - run: |
-            ls /Library/Frameworks/Xamarin.Android.framework/Versions/Current/lib/xbuild
+            find /Library/Frameworks/Xamarin.Android.framework/Versions/Current/lib -name "Xamarin.Android.CSharp.targets"
