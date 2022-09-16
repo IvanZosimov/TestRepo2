@@ -17,7 +17,8 @@ jobs:
     - name: Test PWSH
       shell: bash
       run: | 
-        which powershell
         which pwsh
+        which powershell
+  
       
 
