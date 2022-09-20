@@ -23,7 +23,7 @@ jobs:
             5.x
             3.x
             2.x
-        global-json-file: ./global.json
+        global-json-file: global.json
     - name: Check installed
       run: dotnet --info
 
