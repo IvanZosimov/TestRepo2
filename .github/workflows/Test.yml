@@ -17,8 +17,13 @@ jobs:
       uses: actions/checkout@main
           
 
-    - uses: IvanZosimov/setup-dotnet@dotnetOutput
+    - uses: actions/setup-dotnet@dotnetOutput
       id: cp310
+      with:
+        dotnet-version: | 
+            5.x
+            7.x
+            3.x
     - run: echo '${{ steps.cp310.outputs.dotnet-version }}'
 
   
