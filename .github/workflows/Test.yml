@@ -16,10 +16,10 @@ jobs:
     - name: Checkout
       uses: actions/checkout@main
           
-    - name: Test setup-dotnet v3
-      uses: IvanZosimov/setup-dotnet@dotnetOutput
-    - name: Check installed
-      run: dotnet --info
+
+    - uses: actions/setup-python@v4
+      id: cp310
+    - run: echo '${{ steps.cp310.outputs.python-version }}'
 
   
       
