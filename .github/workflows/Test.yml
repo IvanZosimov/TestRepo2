@@ -17,9 +17,9 @@ jobs:
       uses: actions/checkout@main
           
 
-    - uses: actions/setup-python@v4
+    - uses: IvanZosimov/setup-dotnet@dotnetOutput
       id: cp310
-    - run: echo '${{ steps.cp310.outputs.python-version }}'
+    - run: echo '${{ steps.cp310.outputs.dotnet-version }}'
 
   
       
