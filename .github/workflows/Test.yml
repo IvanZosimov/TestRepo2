@@ -17,7 +17,7 @@ jobs:
       uses: actions/checkout@main
           
 
-    - uses: actions/setup-dotnet@dotnetOutput
+    - uses: IvanZosimov/setup-dotnet@dotnetOutput
       id: cp310
       with:
         dotnet-version: | 
