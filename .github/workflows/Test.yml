@@ -17,13 +17,15 @@ jobs:
       uses: actions/checkout@main
           
 
-    - uses: IvanZosimov/setup-dotnet@dotnetOutput
+    - uses: IvanZosimov/setup-dotnet@ADRdotnet
       id: cp310
       with:
         dotnet-version: | 
             5.x
             7.x
             3.x
+            6.0.400
+        dotnet-quality: "preview"
     - run: echo '${{ steps.cp310.outputs.dotnet-version }}'
 
   
