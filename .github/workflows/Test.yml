@@ -30,6 +30,7 @@ jobs:
             6.0.x
             3.x
             7.0.100-rc.1.22431.12
+        dotnet-quality: "validated"
     - run: echo '${{ steps.cp310.outputs.dotnet-version }}'
 
   
