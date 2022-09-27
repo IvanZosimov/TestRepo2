@@ -10,7 +10,7 @@ jobs:
     continue-on-error: true
     strategy:
       matrix:
-        os: ['macos-latest', 'ubuntu-latest', 'windows-latest']
+        os: ['ubuntu-latest']
     name: Dotnet sample
     steps:
     - name: Checkout
@@ -30,7 +30,7 @@ jobs:
             6.0.x
             3.x
             7.0.100-rc.1.22431.12
-        dotnet-quality: "validated"
+        dotnet-quality: "daily"
     - run: echo '${{ steps.cp310.outputs.dotnet-version }}'
 
   
