@@ -19,12 +19,6 @@ jobs:
 
     - uses: IvanZosimov/setup-dotnet@dotnetOutput
       id: cp310
-      with: 
-        dotnet-version: |
-            2.2.207
-            5.x
-            7.0
-        global-json-file: "./global.json"
     - run: |
         echo '${{ steps.cp310.outputs.dotnet-version }}'
         dotnet --version
