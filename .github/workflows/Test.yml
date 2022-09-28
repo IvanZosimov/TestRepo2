@@ -22,16 +22,9 @@ jobs:
       with:
         dotnet-version: |
             6.0.401
-            6.x
-            7.x
-            7.*
-            *
-            x
-            6.0.x
-            3.x
-            7.0.100-rc.1.22431.12
-        dotnet-quality: "daily"
-    - run: echo '${{ steps.cp310.outputs.dotnet-version }}'
+    - run: |
+        echo '${{ steps.cp310.outputs.dotnet-version }}'
+        dotnet --version
 
   
       
