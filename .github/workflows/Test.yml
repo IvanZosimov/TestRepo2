@@ -10,7 +10,7 @@ jobs:
     continue-on-error: true
     strategy:
       matrix:
-        os: ['ubuntu-latest']
+        os: ['macos-latest']
     name: Dotnet sample
     steps:
     - name: Checkout
@@ -22,10 +22,9 @@ jobs:
       with:
         dotnet-version: |
             6.x
-        dotnet-quality: 'preview'
     - run: |
         echo '${{ steps.cp310.outputs.dotnet-version }}'
-        dotnet --version
+        which dotnet
 
   
       
