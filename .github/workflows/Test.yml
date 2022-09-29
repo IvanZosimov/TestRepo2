@@ -16,7 +16,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@main
           
-    - uses: IvanZosimov/setup-dotnet@main
+    - uses: IvanZosimov/setup-dotnet@dotnetOutput
       id: cp310
       with:
         dotnet-version: |
