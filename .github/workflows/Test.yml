@@ -13,19 +13,9 @@ jobs:
         os: ['macos-latest']
     name: Dotnet sample
     steps:
-    - name: Checkout
-      uses: actions/checkout@main
-          
-
-    - uses: IvanZosimov/setup-dotnet@dotnetOutput
-      id: cp310
-      with:
-        dotnet-version: |
-            6.x
     - run: |
-        echo '${{ steps.cp310.outputs.dotnet-version }}'
         which dotnet
-        ls "/Users/runner/.dotnet"
+        ls "/Users/runner/.dotnet/sdk"
   
       
 
