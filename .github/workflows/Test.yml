@@ -20,8 +20,8 @@ jobs:
       id: cp310
       with:
         dotnet-version: |
-            2.x
             3.0
+        global-json-file: "./global.json"
     - run: |
         echo '${{ steps.cp310.outputs.dotnet-version }}'
         dotnet --version
