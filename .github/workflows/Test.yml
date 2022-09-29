@@ -10,12 +10,20 @@ jobs:
     continue-on-error: true
     strategy:
       matrix:
-        os: ['macos-latest']
+        os: ['windows-latest']
     name: Dotnet sample
     steps:
+    - name: Checkout
+      uses: actions/checkout@main
+          
+    - uses: IvanZosimov/setup-dotnet@main
+      id: cp310
+      with:
+        dotnet-version: |
+            6.x
     - run: |
-        which dotnet
-        ls "/Users/runner/.dotnet/sdk"
+        echo '${{ steps.cp310.outputs.dotnet-version }}'
+        dotnet --version
   
       
 
