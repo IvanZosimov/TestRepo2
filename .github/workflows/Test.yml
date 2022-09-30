@@ -22,7 +22,10 @@ jobs:
     - uses: IvanZosimov/setup-dotnet@dotnet-install-dir-fix
       id: cp310
       with:
-          dotnet-version: '7.0'
+          dotnet-version: |
+            3.1
+            2.1
+            7.0
       env:
         DOTNET_INSTALL_DIR: '/usr/share/dotnet/zzz'
 
