@@ -13,7 +13,7 @@ jobs:
         os: ['ubuntu-latest']
     name: Dotnet sample
     steps:
-    -run: |
+    - run: |
         cd 'C:\Program Files\dotnet\sdk'
         mkdir "zzz"
     - name: Checkout
