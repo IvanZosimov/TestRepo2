@@ -26,11 +26,6 @@ jobs:
             3.1
             2.1
             7.0
-      env:
-        DOTNET_INSTALL_DIR: '/usr/share/dotnet/zzz'
-
-  
-
     - run: |
         echo '${{ steps.cp310.outputs.dotnet-version }}'
         dotnet --info
