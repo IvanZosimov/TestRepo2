@@ -14,7 +14,7 @@ jobs:
     name: Dotnet sample
     steps:
     - run: |
-        cd '/home/runner/.dotnet/sdk'
+        cd /home/runner/.dotnet/sdk
         mkdir 'zzz'
     - name: Checkout
       uses: actions/checkout@main
