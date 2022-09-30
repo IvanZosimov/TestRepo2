@@ -16,12 +16,17 @@ jobs:
     - name: Checkout
       uses: actions/checkout@main
           
-    - uses: IvanZosimov/setup-dotnet@dotnetOutput
-      id: cp310
+    - uses: actions/setup-dotnet@v3
+      with:
+          dotnet-version: 7.0
+      env:
+        DOTNET_INSTALL_DIR: 'C:\Program Files\dotnet\sdk'
+  
 
     - run: |
-        echo '${{ steps.cp310.outputs.dotnet-version }}'
-        dotnet --version
+
+        dotnet --info
+        
   
       
 
