@@ -16,13 +16,12 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
           
-    - uses: actions/setup-dotnet@v3
-      id: cp310
+    - uses: actions/setup-node@v3
       with:
-          dotnet-version: '3.x'
-    - name: Show value of the 'dotnet-version' output
+          node-version-file: 'package.json'
+    - name: Show the installed node.js version
       run: |
-        echo 'Installed by the action .NET SDK version: ${{ steps.cp310.outputs.dotnet-version }}'
+        node -v
 
         
     
