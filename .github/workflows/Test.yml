@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         os: ['ubuntu-latest']
-    name: setup-dotnet@v3
+    name: setup-node@v3 node-version-file check
     steps:
     - name: Checkout
       uses: actions/checkout@v3
