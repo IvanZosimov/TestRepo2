@@ -10,22 +10,19 @@ jobs:
     continue-on-error: true
     strategy:
       matrix:
-        os: ['ubuntu-latest', 'windows-latest', 'macos-latest']
-    name: Dotnet sample
+        os: ['ubuntu-latest']
+    name: setup-dotnet@v3
     steps:
     - name: Checkout
-      uses: actions/checkout@main
+      uses: actions/checkout@v3
           
-    - uses: IvanZosimov/setup-dotnet@dotnet-install-dir-fix
+    - uses: actions/setup-dotnet@v3
       id: cp310
       with:
-          dotnet-version: |
-            3.1
-            2.1
-            7.0
+          dotnet-version: '3.x'
     - run: |
         echo '${{ steps.cp310.outputs.dotnet-version }}'
-        dotnet --info
+
         
     
         
