@@ -20,8 +20,9 @@ jobs:
       id: cp310
       with:
           dotnet-version: '3.x'
-    - run: |
-        echo '${{ steps.cp310.outputs.dotnet-version }}'
+    - name: Show value of the 'dotnet-version' output
+      run: |
+        echo 'installed by the action .NET SDK version: ${{ steps.cp310.outputs.dotnet-version }}'
 
         
     
