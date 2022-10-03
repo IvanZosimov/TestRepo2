@@ -99,5 +99,5 @@
   "homepage": "https://github.com/IvanZosimov/TestRepo2#readme",
   "engines": {
     "node": ">=16.0.0"
-  },
+  }
 }
