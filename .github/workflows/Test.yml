@@ -13,18 +13,19 @@ jobs:
         os: ['ubuntu-latest']
     name: setup-node@v3 node-version-file check
     steps:
-
     - run: |
-        cd '/home/runner/.dotnet/sdk'
+        cd '/usr/share/dotnet'
         mkdir 'zzz'
     - name: Checkout
       uses: actions/checkout@main
-
+          
     - uses: IvanZosimov/setup-dotnet@dotnet-install-dir-fix
       with:
           dotnet-version: '7.0'
       env:
-        DOTNET_INSTALL_DIR: "/home/runner/.dotnet/sdk/zzz"
+        DOTNET_INSTALL_DIR: '/usr/share/dotnet/zzz'
+
+  
 
     - run: |
         dotnet --info
