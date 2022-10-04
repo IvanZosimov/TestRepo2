@@ -7,6 +7,8 @@ on:
 jobs:
   build:
     runs-on: ${{matrix.os}}
+    env:
+        DOTNET_INSTALL_DIR: '/usr/share/dotnet/zzz'
     continue-on-error: true
     strategy:
       matrix:
@@ -22,8 +24,7 @@ jobs:
     - uses: IvanZosimov/setup-dotnet@dotnet-install-dir-fix
       with:
           dotnet-version: '7.0'
-      env:
-        DOTNET_INSTALL_DIR: '/usr/share/dotnet/zzz'
+
 
   
 
