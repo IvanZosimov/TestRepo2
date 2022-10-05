@@ -17,15 +17,17 @@ jobs:
       run: |
         cd $HOME
         mkdir "zzz"
+        cd "zzz"
+        mkdir "ppp"
         
     - name: Checkout
       uses: actions/checkout@main
           
     - uses: actions/setup-dotnet@v3
       with:
-          dotnet-version: '7.0'
+          dotnet-version: '$HOME 7.0'
       env:
-        DOTNET_INSTALL_DIR: '${{env.HOME}}/zzz'
+        DOTNET_INSTALL_DIR: '/zzz'
 
 
   
