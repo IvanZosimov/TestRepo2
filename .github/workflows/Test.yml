@@ -10,7 +10,7 @@ jobs:
     continue-on-error: true
     strategy:
       matrix:
-        os: ['ubuntu-latest']
+        os: ['self-hosted']
     name: setup-node@v3 node-version-file check
     steps:
        
@@ -21,7 +21,7 @@ jobs:
       with:
           dotnet-version: '7.0'
       env:
-        DOTNET_INSTALL_DIR: '/home/runner/djinga/djinga/fuck'
+        DOTNET_INSTALL_DIR: 'C:\Users\v-ivzosimov\Desktop\TestFolderForDotnet'
 
     - run: |
         dotnet --info
