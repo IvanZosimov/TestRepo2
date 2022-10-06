@@ -18,12 +18,18 @@ jobs:
       uses: actions/checkout@main
           
     - uses: IvanZosimov/setup-dotnet@dotnet-install-dir-fix
+      id: cp310
       with:
-          dotnet-version: '7.0'
+          dotnet-version: |
+            7.0
+            6.0
+            3.1
+            3.0
       env:
         DOTNET_INSTALL_DIR: 'C:\Users\v-ivzosimov\Desktop\TestFolderForDotnet'
 
     - run: |
+        echo '${{steps.cp310.outputs.dotnet-version}}'
         dotnet --info
         
     
