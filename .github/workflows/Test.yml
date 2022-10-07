@@ -23,7 +23,7 @@ jobs:
           dotnet-version: |
             7.0
       env:
-        DOTNET_INSTALL_DIR: 'LocalAppData/Microsoft/dotnet'
+        DOTNET_INSTALL_DIR: '~/AppData/Local/Microsoft/dotnet'
     - run: |
         echo '${{steps.cp310.outputs.dotnet-version}}'
         dotnet --info
