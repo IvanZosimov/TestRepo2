@@ -17,7 +17,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@main
           
-    - uses: actions/setup-dotnet@v3
+    - uses: IvanZosimov/setup-dotnet@dotnet-install-dir-fix
       id: cp310
       with:
           dotnet-version: |
