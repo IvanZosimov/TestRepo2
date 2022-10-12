@@ -14,9 +14,10 @@ jobs:
     name: setup-node@v3 node-version-file check
     steps:
               
-    - uses: actions/setup-python@v4
-      with:
-        python-version: "3.10.x"
+     - uses: actions/setup-dotnet@main
+       with:
+          dotnet-version: |
+              6.0.x
 
         
     
