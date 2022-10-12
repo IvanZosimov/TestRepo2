@@ -10,23 +10,15 @@ jobs:
     continue-on-error: true
     strategy:
       matrix:
-        os: ['self-hosted']
+        os: ['ubuntu-latest']
     name: setup-node@v3 node-version-file check
     steps:
-       
-    - name: Checkout
-      uses: actions/checkout@main
-          
-    - uses: IvanZosimov/setup-dotnet@dotnet-install-dir-fix
-      id: cp310
+              
+    - uses: actions/setup-dotnet@v2
       with:
           dotnet-version: |
-            7.0
-      env:
-        DOTNET_INSTALL_DIR: '~/AppData/Local/Microsoft/dotnet'
-    - run: |
-        echo '${{steps.cp310.outputs.dotnet-version}}'
-        dotnet --info
+            6.0.x
+
         
     
         
