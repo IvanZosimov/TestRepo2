@@ -14,12 +14,13 @@ jobs:
     name: setup-node@v3 node-version-file check
     steps:
               
-     - uses: actions/setup-dotnet@main
+     - uses: actions/setup-dotnet@v3
        with:
           dotnet-version: |
               6.0.x
        env:
          DOTNET_INSTALL_DIR: "%LocalAppData%/Microsoft/dotnet"
+     - run: dotnet --info
         
     
         
