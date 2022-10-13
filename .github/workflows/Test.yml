@@ -18,6 +18,8 @@ jobs:
        with:
           dotnet-version: |
               6.0.x
+       env:
+        DOTNET_INSTALL_DIR: "~/.dotnet"
 
         
     
