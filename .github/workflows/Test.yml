@@ -17,9 +17,7 @@ jobs:
      - uses: actions/setup-dotnet@v3
        with:
           dotnet-version: |
-              6.x
-       env:
-         DOTNET_INSTALL_DIR: "%LocalAppData%/Microsoft/dotnet"
+              4.1
      - run: dotnet --info
         
     
