@@ -14,7 +14,7 @@ jobs:
     name: setup-node@v3 node-version-file check
     steps:
               
-     - uses: actions/setup-dotnet@v3
+     - uses: IvanZosimov/setup-dotnet@dotnet-install-dir-fix
        with:
           dotnet-version: |
               4.1
