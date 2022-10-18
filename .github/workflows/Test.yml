@@ -10,16 +10,13 @@ jobs:
     continue-on-error: true
     strategy:
       matrix:
-        os: ['windows-latest']
+        os: ['ubuntu-latest']
     name: setup-node@v3 node-version-file check
     steps:
               
-     - uses: IvanZosimov/setup-dotnet@dotnet-install-dir-fix
+     - uses: actions/setup-python@main
        with:
-          dotnet-version: |
-              4.1
-     - run: dotnet --info
-        
+          python-version: "3.10"
     
         
   
