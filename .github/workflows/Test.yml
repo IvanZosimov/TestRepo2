@@ -18,7 +18,10 @@ jobs:
           dotnet-version: "6.0.x"
           include-prerelease: true
     
-        
+     - name: Install EF Tool
+       run: |
+          dotnet new tool-manifest
+          dotnet tool install dotnet-ef
   
       
 
