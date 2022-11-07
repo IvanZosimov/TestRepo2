@@ -22,6 +22,9 @@ jobs:
        run: |
           dotnet new tool-manifest
           dotnet tool install dotnet-ef
+          cd C:\Program Files\dotnet\packs\Microsoft.NET.Runtime.WebAssembly.Sdk\6.0.10\Sdk\WasmApp.targets
+          Get-Content WasmApp.targets
+          
   
       
 
