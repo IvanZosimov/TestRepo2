@@ -10,20 +10,16 @@ jobs:
     continue-on-error: true
     strategy:
       matrix:
-        os: ['windows-latest']
+        os: ['windows-latest', 'windows-2019']
     steps:
               
-     - uses: actions/setup-dotnet@v2
+     - uses: actions/setup-dotnet@v3
        with:
           dotnet-version: "6.0.x"
-          include-prerelease: true
     
-     - name: Install EF Tool
+     - name: Check permissions
        run: |
-          dotnet new tool-manifest
-          dotnet tool install dotnet-ef
-          cd "C:\Program Files\dotnet\packs\Microsoft.NET.Runtime.WebAssembly.Sdk\6.0.10\Sdk"
-          Get-Content WasmApp.targets
+            (get-acl "C:/Program Files/dotnet").access | ft IdentityReference,FileSystemRights,AccessControlType,IsInherited,InheritanceFlags -auto
           
   
       
