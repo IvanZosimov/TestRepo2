@@ -10,16 +10,13 @@ jobs:
     continue-on-error: true
     strategy:
       matrix:
-        os: ['windows-latest', 'windows-2019']
+        os: ['ubuntu-latest']
     steps:
               
      - uses: actions/setup-dotnet@v3
        with:
-          dotnet-version: "6.0.x"
-    
-     - name: Check permissions
-       run: |
-            (get-acl "C:/Program Files/dotnet").access | ft IdentityReference,FileSystemRights,AccessControlType,IsInherited,InheritanceFlags -auto
+          dotnet-version: "6.0.402"
+ 
           
   
       
