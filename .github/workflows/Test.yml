@@ -13,9 +13,7 @@ jobs:
         os: ['ubuntu-latest']
     steps:
               
-     - uses: actions/setup-dotnet@v3
-       with:
-          dotnet-version: "*"
+     - uses: actions/setup-dotnet@teo-tsirpanis:patch-1
  
           
   
