@@ -13,7 +13,7 @@ jobs:
         os: ['ubuntu-latest']
     steps:
               
-     - uses: actions/setup-dotnet@teo-tsirpanis:patch-1
+     - uses: teo-tsirpanis/setup-dotnet@patch-1
  
           
   
