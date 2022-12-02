@@ -18,6 +18,7 @@ jobs:
         dotnet-version: "6.0.x"
      
      - run: dotnet nuget --version
+     - run: $env:PATH
      
  
           
