@@ -10,10 +10,13 @@ jobs:
     continue-on-error: true
     strategy:
       matrix:
-        os: ['ubuntu-latest']
+        os: ['ubuntu-latest', 'windows-latest']
     steps:
               
-     - uses: actions/setup-dotnet@v3
+     - uses: actions/setup-dotnet@v2
+     
+     - run: dotnet nuget --version
+     
  
           
   
