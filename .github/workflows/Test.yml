@@ -14,11 +14,4 @@ jobs:
     steps:
               
      - uses: actions/setup-dotnet@v2
-     - run: dotnet nuget --version
-     - run: $env:PATH
-     
- 
-          
-  
-      
-
+     - run: dotnet nuget --version   
