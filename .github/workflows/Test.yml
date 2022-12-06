@@ -13,7 +13,7 @@ jobs:
         os: ['ubuntu-latest']
     steps:
               
-     - uses: actions/setup-dotnet@v2
+     - uses: actions/setup-dotnet@v3
      - run: |
         dotnet --info
         dotnet nuget --version   
