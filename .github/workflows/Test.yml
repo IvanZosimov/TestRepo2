@@ -22,4 +22,4 @@ jobs:
      - run: | 
         echo '{"sdk":{"version": "${{ steps.cp310.outputs.dotnet-version }}"}}' > .global.json
         cat .global.json
-        dotnet --info
+        dotnet --version
