@@ -11,15 +11,11 @@ jobs:
     strategy:
       matrix:
         os: ['ubuntu-latest']
-        dotnet: [ '2.1.x', '3.1.x', '5.0.x' ]
+        dotnet: [ '2.1.x' ]
     steps:
      - name: checkout-code
        uses: actions/checkout@v3    
-     - uses: actions/setup-dotnet@v3
+     - uses: IvanZosimov/setup-dotnet@test
        id: installationStep
        with:
         dotnet-version: ${{ matrix.dotnet }}
-     - run: | 
-        echo '{"sdk":{"version": "${{ steps.installationStep.outputs.dotnet-version }}"}}' > ./global.json
-        cat ./global.json
-        dotnet --version
