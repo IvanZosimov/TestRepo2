@@ -12,6 +12,6 @@ jobs:
       matrix:
         os: ['ubuntu-latest']
     steps:
-     - uses: actions/labeler@master
+     - uses: actions/labeler@max
        with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
