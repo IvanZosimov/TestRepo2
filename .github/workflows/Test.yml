@@ -7,11 +7,10 @@ on:
 jobs:
   build:
     runs-on: ${{matrix.os}}
-    continue-on-error: true
     strategy:
       matrix:
         os: ['ubuntu-latest']
     steps:
-     - uses: actions/labeler@max
-       with:
-        repo-token: "${{ secrets.GITHUB_TOKEN }}"
+     - run: |
+        Write-Host "##vso[task.logissue type=error;] Unexpected failure occurs while configuring git preferences."
+       shell: pwsh
