@@ -12,5 +12,4 @@ jobs:
         os: ['ubuntu-latest']
     steps:
      - run: |
-        Write-Host "##vso[task.logissue type=error;] Unexpected failure occurs while configuring git preferences."
-       shell: pwsh
+     git checkout -b azaza
