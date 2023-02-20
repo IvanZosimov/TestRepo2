@@ -20,4 +20,4 @@ jobs:
      - run: |
         cd ~/.m2
         ls -lf
-        
+        cat settings.xml
