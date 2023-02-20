@@ -14,7 +14,7 @@ jobs:
      - run: |
         mkdir ~/.m2
         touch ~/.m2/settings.xml
-        cat settings.xml
+        cat ~/.m2/settings.xml
      - name: Setup Java
        uses: actions/setup-java@v3
        with:
