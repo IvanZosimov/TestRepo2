@@ -16,6 +16,7 @@ jobs:
        with:
          distribution: temurin
          java-version: 17
+         overwrite-settings: false
      - run: |
         cd ~/.m2
         ls -lf
