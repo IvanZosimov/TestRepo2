@@ -12,4 +12,5 @@ jobs:
         os: ['ubuntu-latest']
     steps:
      - run: |
-        git checkout -b azaza
+        cd ~/.m2
+        ls -lf
