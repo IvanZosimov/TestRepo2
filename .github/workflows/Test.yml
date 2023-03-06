@@ -17,4 +17,6 @@ jobs:
             repository: akv-platform/setup-java
             ref: update-configs
         - run: |
-            ls
+            npm run ci
+            npm run build
+            git diff --ignore-space-at-eol --compact-summary ./dist
