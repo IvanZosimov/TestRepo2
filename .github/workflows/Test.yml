@@ -9,19 +9,11 @@ jobs:
     runs-on: ${{matrix.os}}
     strategy:
       matrix:
-        os: ['ubuntu-latest']
+        os: ['windows-latest']
     steps:
-     - run: |
-        mkdir ~/.m2
-        touch ~/.m2/settings.xml
-        cat ~/.m2/settings.xml
-     - name: Setup Java
-       uses: actions/setup-java@v3
-       with:
-         distribution: temurin
-         java-version: 17
-         overwrite-settings: false
-     - run: |
-        cd ~/.m2
-        ls -lf
-        cat settings.xml
+        - name: Checkout tools repo
+          uses: actions/checkout@v3
+          with:
+            repository: actions/setup-java
+        - run: |
+            ls -lf
