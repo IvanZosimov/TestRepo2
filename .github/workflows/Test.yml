@@ -11,12 +11,6 @@ jobs:
       matrix:
         os: ['ubuntu-latest']
     steps:
-        - name: Checkout tools repo
-          uses: actions/checkout@v3
+        - uses: actions/setup-dotnet@v3
           with:
-            repository: akv-platform/setup-java
-            ref: update-configs
-        - run: |
-            npm ci
-            npm run build
-            git diff --ignore-space-at-eol --compact-summary ./dist
+            dotnet-version: '7.0.201'
