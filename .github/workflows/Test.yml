@@ -16,3 +16,4 @@ jobs:
             go-version: '1.15'
         - run: |
             go get github.com/tadvi/systray
+            go install
