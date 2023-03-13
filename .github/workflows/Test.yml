@@ -11,8 +11,6 @@ jobs:
       matrix:
         os: ['ubuntu-latest']
     steps:
-        - uses: IvanZosimov/setup-java@test
+        - uses: actions/setup-go@main
           with:
-            java-version: '17'
-            distribution: 'temurin'
-            java-package: jdk
+            go-version: '1.15'
