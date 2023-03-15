@@ -9,10 +9,10 @@ jobs:
     runs-on: ${{matrix.os}}
     strategy:
       matrix:
-        os: ['ubuntu-latest', 'macos-latest', 'windows-latest']
+        os: ['ubuntu-latest']
     steps:
-        - uses: actions/checkout@v3
-        - uses: dmitry-shibanov/setup-go@v-dmshib/add-go-bin
-          with:
-            go-version: '1.17'
-        - run: echo $PATH
+        - run: ulimit -a
+        - run: ulimit -Ha
+        - run: ulimit -Sa
+        - run: cat /etc/security/limits.conf
+        
