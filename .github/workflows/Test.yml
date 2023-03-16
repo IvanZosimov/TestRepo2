@@ -10,7 +10,7 @@ jobs:
     continue-on-error: true
     strategy:
       matrix:
-        os: ['ubuntu-latest', 'macos-latest', 'windows-latest']
+        os: ['ubuntu-latest']
 
     steps:
     - uses: actions/checkout@v3
@@ -23,15 +23,7 @@ jobs:
         jdkFile: openjdk-19.0.1_macos-x64_bin.tar.gz
         
     - run: |
-        echo $JAVA_HOME
-        mvn -version
-        
-    - uses: actions/setup-java@v3
-      with:
-        java-version: 19.0.1
-        distribution: jdkfile
-        jdkFile: openjdk-19.0.1_macos-x64_bin.tar.gz
-    - run: |
+        echo $JAVA_HOME_17_X64
         echo $JAVA_HOME
         mvn -version
         
