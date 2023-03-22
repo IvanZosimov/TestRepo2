@@ -10,19 +10,12 @@ jobs:
     continue-on-error: true
     strategy:
       matrix:
-        os: ['ubuntu-latest', 'ubuntu-latest']
+        os: ['ubuntu-latest', 'windows-latest']
 
     steps:
-    - uses: actions/checkout@v3
-    - run: |
-        wget https://download.oracle.com/java/19/latest/jdk-19_linux-x64_bin.tar.gz 
-    - uses: actions/setup-java@v3
-      with:
-        java-version: 19.0.2
-        distribution: jdkfile
-        jdkFile: jdk-19_linux-x64_bin.tar.gz
-        
-    - run: |
-        echo $JAVA_HOME
-        mvn -version
-        
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: zulu
+          java-version: 8
+          cache: maven
