@@ -6,11 +6,10 @@ on:
     
 jobs:
   build:
-    runs-on: ${{matrix.os}}
-    continue-on-error: true
-    strategy:
-      matrix:
-        os: ['ubuntu-latest', 'windows-latest']
+    runs-on: self-hosted
+    container:
+        image: ubuntu:latest
+
 
     steps:
       - name: Setup Java
@@ -18,4 +17,3 @@ jobs:
         with:
           distribution: zulu
           java-version: 8
-          cache: maven
