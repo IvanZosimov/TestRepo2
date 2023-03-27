@@ -17,7 +17,7 @@ jobs:
 
     steps:
       - name: Setup Java
-        uses: actions/setup-java@${{matrix.ref}}
+        uses: actions/setup-java@v3
         with:
           distribution: ${{matrix.dist}}
           java-version: ${{matrix.version}}
