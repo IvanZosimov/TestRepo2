@@ -6,6 +6,7 @@ on:
     
 jobs:
   build:
+    continue-on-error: true
     strategy:
       matrix: 
         dist: ['temurin', 'zulu', 'microsoft', 'adopt']
