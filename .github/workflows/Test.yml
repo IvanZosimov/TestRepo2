@@ -10,7 +10,6 @@ jobs:
       matrix: 
         dist: ['temurin', 'zulu', 'microsoft', 'adopt', 'adopt-openj9', 'liberica', 'corretto', 'oracle']
         os: ["ubuntu-latest", "windows-latest", "macos-latest"]
-        ref: ["v1", "v2", "v3", "main"]
         version: [8, 11, 17]
     runs-on: ${{matrix.os}}
 
