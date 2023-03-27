@@ -6,14 +6,18 @@ on:
     
 jobs:
   build:
-    runs-on: self-hosted
-    container:
-        image: ubuntu:latest
+    strategy:
+      matrix: 
+        dist: ['temurin', 'zulu', 'microsoft', 'adopt', 'adopt-openj9', 'liberica', 'corretto', 'oracle']
+        os: ["ubuntu-latest", "windows-latest", "macos-latest"]
+        ref: ["v1", "v2", "v3", "main"]
+        version: [8, 11, 17]
+    runs-on: ${{matrix.os}}
 
 
     steps:
       - name: Setup Java
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@${{matrix.ref}}
         with:
-          distribution: zulu
-          java-version: 8
+          distribution: ${{matrix.dist}}
+          java-version: ${{matrix.version}}
