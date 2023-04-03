@@ -24,10 +24,8 @@ jobs:
           java-version: ${{matrix.version}}
       - run: |
             mv  /opt/hostedtoolcache/Java_Corretto_jdk/11.0.18.10.1 /opt/hostedtoolcache/Java_Corretto_jdk/11.0.18+10.1
-            mkdir /opt/hostedtoolcache/Java_Corretto_jdk/11.0.18+11.1
-            cp -R /opt/hostedtoolcache/Java_Corretto_jdk/11.0.18+10.1/* /opt/hostedtoolcache/Java_Corretto_jdk/11.0.18+11.1
       - name: Setup Java
         uses: actions/setup-java@v3
         with:
           distribution: ${{matrix.dist}}
-          java-version: ${{matrix.version}}
+          java-version: 11.0.18
