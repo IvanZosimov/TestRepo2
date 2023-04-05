@@ -17,4 +17,8 @@ jobs:
       with:
         java-version: "17"
         distribution: ${{matrix.distrib}}
+    - uses: actions/setup-java@v3
+      with:
+        java-version: "17"
+        distribution: ${{matrix.distrib}}
 
