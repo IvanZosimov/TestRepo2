@@ -7,13 +7,14 @@ on:
 jobs:
   test:
     name: Run test
+    strategy:
+        matrix:
+            distrib: ["temurin", "zulu", "adopt", "adopt-openj9", "liberica", "microsoft", "corretto", "semeru", "oracle"]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: actions/setup-dotnet@v3
+    - uses: actions/setup-java@v3
       with:
-        dotnet-version: "6.0.x"
-    
-    - run: |
-        dotnet --version
+        java-version: "17"
+        distribution: ${{matrix.distrib}}
 
