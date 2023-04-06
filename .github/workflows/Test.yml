@@ -9,7 +9,7 @@ jobs:
     name: Run test
     strategy:
         matrix:
-            distrib: ["corretto"]
+            distrib: ["corretto", "zulu"]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
