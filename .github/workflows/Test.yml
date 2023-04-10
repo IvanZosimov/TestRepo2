@@ -16,6 +16,7 @@ jobs:
     - uses: akv-platform/setup-dotnet@add-latest-patch-syntax
       with:
         dotnet-version: "6.0.1xx"
+        dotnet-quality: "ga"
     - run: dotnet --info
         
 
