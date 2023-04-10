@@ -14,6 +14,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - uses: akv-platform/setup-dotnet@add-latest-patch-syntax
+      with:
+        dotnet-version: ""
     - run: dotnet --info
         
 
