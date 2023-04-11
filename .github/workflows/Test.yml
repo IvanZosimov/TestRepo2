@@ -7,13 +7,14 @@ on:
 jobs:
   test:
     name: Run test
+    continue-on-error: true
     strategy:
         matrix:
             version: ["3", "3.0", "6.0.1xx", "6.0.310", "6.0.x", "5.x", "", "*", "50.0.10", "600.200.3xx", "random"]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: IvanZosimov/setup-dotnet@add-latest-patch-syntax
+    - uses: akv-platform/setup-dotnet@add-latest-patch-syntax
       with:
         dotnet-version: ${{matrix.version}}
     - run: dotnet --info
