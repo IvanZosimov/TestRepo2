@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: akv-platform/setup-dotnet@add-latest-patch-syntax
+    - uses: actions/setup-dotnet@v3
       with:
         dotnet-version: ${{matrix.version}}
     - run: dotnet --info
