@@ -14,9 +14,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: actions/setup-dotnet@v3
+    - uses: actions/setup-node@v3
       with:
-        dotnet-version: ${{matrix.version}}
-    - run: dotnet --info
+        node-version: "*"
+    - run: node --version
         
 
