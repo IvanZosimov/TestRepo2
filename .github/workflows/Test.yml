@@ -10,13 +10,13 @@ jobs:
     continue-on-error: true
     strategy:
         matrix:
-            version: ["30", "3.0", "6.0.1xx", "6.0.310", "6.0.x", "5.x", "", "*", "50.0.10", "600.200.3xx", "random"]
+            version: ["30", "3.0", "6.0.1xx", "6.0.310", "6.0.x", "5.x", "", "*", "50.0.10", "600.200.3xx", "random", "3.0.1xx"]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
+    - uses: akv-platform/setup-dotnet@add-latest-patch-syntax
       with:
-        node-version: "*"
-    - run: node --version
+        node-version: ${{matrix.version}}
+    - run: dotnet --info
         
 
