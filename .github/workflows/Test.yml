@@ -6,17 +6,23 @@ on:
     
 jobs:
   test:
-    name: Run test
-    continue-on-error: true
-    strategy:
-        matrix:
-            version: ["30", "3.0", "6.0.1xx", "6.0.310", "6.0.x", "5.x", "", "*", "50.0.10", "600.200.3xx", "random", "3.0.1xx"]
     runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/dotnet/core/runtime-deps:3.0-bionic
+      options: --dns 127.0.0.1
+    services:
+      squid-proxy:
+        image: ubuntu/squid:latest
+        ports:
+          - 3128:3128
+    env:
+      https_proxy: http://squid-proxy:3128
+      http_proxy: http://squid-proxy:3128
     steps:
-    - uses: actions/checkout@v3
-    - uses: akv-platform/setup-dotnet@add-latest-patch-syntax
-      with:
-        dotnet-version: ${{matrix.version}}
-    - run: dotnet --info
+      - name: Install Powershell
+        run: |
+          apt-get update
+          apt-get install -y powershell
+          pwsh -v
         
 
