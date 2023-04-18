@@ -8,7 +8,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/dotnet/core/runtime-deps:3.0-bionic
+      image: ubuntu:latest
       options: --dns 127.0.0.1
     services:
       squid-proxy:
