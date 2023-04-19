@@ -9,9 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - uses: actions/setup-dotnet@v3
+      - uses: IvanZosimov/setup-dotnet@add-latest-patch-syntax
         with:
-          dotnet-version: "7.0"
-          dotnet-quality: "preview"
+          dotnet-version: "7.0.4xx"
+          dotnet-quality: "daily"
         
 
