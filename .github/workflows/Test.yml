@@ -11,6 +11,6 @@ jobs:
     steps:
       - uses: akv-platform/setup-dotnet@add-latest-patch-syntax
         with:
-          dotnet-version: "3.1.2xx"
+          dotnet-version: "8.0.0xx"
         
 
