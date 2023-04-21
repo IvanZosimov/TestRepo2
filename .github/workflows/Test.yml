@@ -14,6 +14,6 @@ jobs:
           owner-name: "actions"
           repository-name: "setup-dotnet"
           from-date: "01/01/2023"
-          github-token: ${{ithub.token}}
+          github-token: ${{github.token}}
         
 
