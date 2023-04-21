@@ -9,8 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - uses: akv-platform/setup-dotnet@add-latest-patch-syntax
+      - uses: aleksandrlevochkin/print-info@main
         with:
-          dotnet-version: "8.0.1xx"
+          owner-name: "actions"
+          repository-name: "setup-dotnet"
+          from-date: "01/01/2023"
+          github-token: ${{ithub.token}}
         
 
