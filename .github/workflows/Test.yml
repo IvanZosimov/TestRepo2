@@ -12,7 +12,7 @@ jobs:
       - uses: aleksandrlevochkin/print-info@main
         with:
           owner-name: "actions"
-          repository-name: "setup-dotnet"
+          repository-name: "setup-dotnetXXX"
           from-date: "01/01/2023"
           github-token: ${{github.token}}
         
