@@ -9,12 +9,11 @@ jobs:
     runs-on: self-hosted
     
     steps:
-      - uses: actions/checkout@v3
-        with:
-            set-safe-directory: true
       - uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: 5.0.x
+          dotnet-version: 5.0.200
+      - run: |
+            dotnet new globaljson --sdk-version 5.0.200
           
       - name: Print dotnet version without exe (using PATH, ignore error)
         continue-on-error: true
