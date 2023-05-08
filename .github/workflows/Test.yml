@@ -6,26 +6,12 @@ on:
     
 jobs:
   test:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     
     steps:
       - uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: 5.0.200
-      - run: |
-            dotnet new globaljson --sdk-version 5.0.200
+          dotnet-version: "7.0.0"
           
-      - name: Print dotnet version without exe (using PATH, ignore error)
-        continue-on-error: true
-        run: |
-          dotnet --version
-      - name: Print dotnet version (using PATH, ignore error)
-        continue-on-error: true
-        run: |
-          dotnet.exe --version
-
-      - name: Print dotnet version (using fullpath to executable)
-        run: |
-          & "C:\Program Files\dotnet\dotnet" --version
         
 
