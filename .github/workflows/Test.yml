@@ -10,8 +10,6 @@ jobs:
     
     steps:
       - uses: actions/checkout@v3
-        with:
-          set-safe-directory: 'C:/Users/v-ivzosimov/Desktop/self-hosted/actions-runner/_work/TestRepo2/TestRepo2'
       - uses: actions/setup-dotnet@v3
         with:
           dotnet-version: 5.0.x
