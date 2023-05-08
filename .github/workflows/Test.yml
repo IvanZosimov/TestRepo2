@@ -9,11 +9,21 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - uses: aleksandrlevochkin/print-info@main
+      - uses: actions/setup-dotnet@v3
         with:
-          owner-name: "actions"
-          repository-name: "setup-dotnetXXX"
-          from-date: "01/01/2023"
-          github-token: ${{github.token}}
+          dotnet-version: 5.0.x
+          
+      - name: Print dotnet version without exe (using PATH, ignore error)
+        continue-on-error: true
+        run: |
+          dotnet --version
+      - name: Print dotnet version (using PATH, ignore error)
+        continue-on-error: true
+        run: |
+          dotnet.exe --version
+
+      - name: Print dotnet version (using fullpath to executable)
+        run: |
+          & "C:\Program Files\dotnet\dotnet" --version
         
 
