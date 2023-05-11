@@ -19,11 +19,24 @@ jobs:
           dotnet-version: ${{matrix.version}}
           cache: true
       - run: |
-            dotnet build
+            dotnet restore test.csproj
+    
+        
+  test2:
+    strategy:
+        matrix:
+          os: ["ubuntu-latest", "macos-latest", "windwos-latest"]
+          version: ["6.0"]
+    runs-on: ${{matrix.os}}
+    
+    steps:
+      - uses: actions/checkout@v3
       - uses: nogic1008/setup-dotnet@feat/nuget-cache
         with:
           dotnet-version: ${{matrix.version}}
-          cache: true   
+          cache: true
+      - run: |
+            dotnet restore test.csproj
           
         
 
