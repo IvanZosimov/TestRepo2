@@ -13,6 +13,7 @@ jobs:
     runs-on: ${{matrix.os}}
     
     steps:
+      - uses: actions/checkout@v3
       - uses: nogic1008/setup-dotnet@feat/nuget-cache
         with:
           dotnet-version: ${{matrix.version}}
