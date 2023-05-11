@@ -16,12 +16,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: nogic1008/setup-dotnet@feat/nuget-cache
+        id: stepId
         with:
           dotnet-version: 6.x
           cache: true
           cache-dependency-path: ./packages.lock.json
       - run: |
-            dotnet restore test.csproj
+            echo "${{steps.stepId.outputs.cache-hit}}"
+            
           
         
 
