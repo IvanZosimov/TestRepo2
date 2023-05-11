@@ -18,6 +18,7 @@ jobs:
         with:
           dotnet-version: ${{matrix.version}}
           cache: true
+          cache-dependency-path: "./e2e-test-csproj/pacakge.lock.json"
       - run: |
             dotnet restore test.csproj
           
