@@ -15,7 +15,7 @@ jobs:
         NUGET_PACKAGES: ${{ github.workspace }}/hru/.nuget/packages
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-dotnet@v3
+      - uses: akv-paltform/setup-dotnet@add-latest-patch-syntax
         id: stepId
         #with:
           #dotnet-version: 6.x
