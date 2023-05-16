@@ -17,7 +17,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: akv-platform/setup-dotnet@add-latest-patch-syntax
         id: stepId
-        #with:
+        with:
           dotnet-version: 6.x
           #cache: true
           #cache-dependency-path: ./packages.lock.json
