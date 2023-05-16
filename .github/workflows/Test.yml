@@ -18,7 +18,7 @@ jobs:
       - uses: akv-platform/setup-dotnet@add-latest-patch-syntax
         id: stepId
         with:
-          dotnet-version: 2.0.1xx
+          dotnet-version: 5.0.1xx
           #cache: true
           #cache-dependency-path: ./packages.lock.json
       - run: |
