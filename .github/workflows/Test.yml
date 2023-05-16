@@ -18,7 +18,8 @@ jobs:
       - uses: akv-platform/setup-dotnet@add-latest-patch-syntax
         id: stepId
         with:
-          dotnet-version: 6.0.4xx
+          dotnet-version: 6.0
+          dotnet-quality: "preview"
           #cache: true
           #cache-dependency-path: ./packages.lock.json
       - run: |
