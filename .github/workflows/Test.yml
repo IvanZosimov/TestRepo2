@@ -15,14 +15,14 @@ jobs:
         NUGET_PACKAGES: ${{ github.workspace }}/hru/.nuget/packages
     steps:
       - uses: actions/checkout@v3
-      - uses: nogic1008/setup-dotnet@feat/nuget-cache
+      - uses: actions/setup-dotnet@v3
         id: stepId
-        with:
-          dotnet-version: 6.x
-          cache: true
-          cache-dependency-path: ./packages.lock.json
+        #with:
+          #dotnet-version: 6.x
+          #cache: true
+          #cache-dependency-path: ./packages.lock.json
       - run: |
-            echo "${{steps.stepId.outputs.cache-hit}}"
+            echo "${{steps.stepId.outputs.dotnet-version}}"
             
           
         
