@@ -1,8 +1,5 @@
 {
-   // This is a comment.
   "sdk": {
-    "version": "6.0.408" /* This is comment 2*/
-  /* This is a
-  multiline comment.*/
+    "version": "6.0.408"
   }
 }
