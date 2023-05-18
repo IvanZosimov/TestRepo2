@@ -9,17 +9,17 @@ jobs:
     strategy:
         matrix:
           os: ["ubuntu-latest", "macos-latest", "windows-latest"]
-          version: ["6.0"]
+          version: ["6.0.2xx", "6.0.2**", "6.0.2XX", "3.0.1xx", "3.1", "6.0.x"]
     runs-on: ${{matrix.os}}
+    continue-on-error: true
     env:
         NUGET_PACKAGES: ${{ github.workspace }}/hru/.nuget/packages
     steps:
       - uses: actions/checkout@v3
-      - uses: nogic1008/setup-dotnet@feat/nuget-cache
+      - uses: akv-platform/setup-dotnet@add-latest-patch-syntax
         id: stepId
         with:
-          dotnet-version: |
-            5.0
+          dotnet-version: ${{matrix.version}}
           cache: true
           cache-dependency-path: "**/packages.lock.json"
       - run: |
