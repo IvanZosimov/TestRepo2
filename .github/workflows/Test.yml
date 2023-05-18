@@ -22,6 +22,7 @@ jobs:
             5.0
           cache: true
       - run: |
+            dotnet restore
             echo "${{steps.stepId.outputs.dotnet-version}}"
             
           
