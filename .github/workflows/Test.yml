@@ -21,6 +21,7 @@ jobs:
           dotnet-version: |
             5.0
           cache: true
+          cache-dependency-path: "./e2e-test-csproj/packages.lock.json"
       - run: |
             dotnet restore "test.csproj"
             echo "${{steps.stepId.outputs.dotnet-version}}"
