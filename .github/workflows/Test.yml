@@ -15,11 +15,12 @@ jobs:
         NUGET_PACKAGES: ${{ github.workspace }}/hru/.nuget/packages
     steps:
       - uses: actions/checkout@v3
-      - uses: akv-platform/setup-dotnet@fix-issue-with-multiple-versions
+      - uses: nogic1008/setup-dotnet@feat/nuget-cache
         id: stepId
         with:
           dotnet-version: |
             5.0
+          cache: true
       - run: |
             echo "${{steps.stepId.outputs.dotnet-version}}"
             
