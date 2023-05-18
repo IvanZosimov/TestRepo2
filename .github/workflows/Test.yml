@@ -20,10 +20,9 @@ jobs:
         id: stepId
         with:
           dotnet-version: ${{matrix.version}}
-          cache: true
-          cache-dependency-path: "**/packages.lock.json"
+
       - run: |
-            dotnet restore "test.csproj"
+
             echo "${{steps.stepId.outputs.dotnet-version}}"
             
           
