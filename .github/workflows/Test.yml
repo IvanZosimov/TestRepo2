@@ -15,15 +15,11 @@ jobs:
         NUGET_PACKAGES: ${{ github.workspace }}/hru/.nuget/packages
     steps:
       - uses: actions/checkout@v3
-      - uses: akv-platform/setup-dotnet@add-latest-patch-syntax
+      - uses: akv-platform/setup-dotnet@fix-issue-with-multiple-versions
         id: stepId
         with:
           dotnet-version: |
-            5.0.2xx
-            6.0
-            3.1
-          #cache: true
-          #cache-dependency-path: ./packages.lock.json
+            5.0
       - run: |
             echo "${{steps.stepId.outputs.dotnet-version}}"
             
