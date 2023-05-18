@@ -20,6 +20,7 @@ jobs:
         id: stepId
         with:
           dotnet-version: ${{matrix.version}}
+          dotnet-quality: "preview"
 
       - run: |
 
