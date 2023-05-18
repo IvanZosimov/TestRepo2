@@ -18,11 +18,6 @@ jobs:
       - uses: akv-platform/setup-dotnet@add-latest-patch-syntax
         id: stepId
         with:
-          dotnet-version: |
-            3.1
-            6.0.2xx
-            7.0
-            2.0
           global-json-file: "./global.json"
       - run: |
             echo "${{steps.stepId.outputs.dotnet-version}}"
