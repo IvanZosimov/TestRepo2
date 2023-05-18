@@ -4,7 +4,7 @@
     "net7.0": {
       "Microsoft.NET.Test.Sdk": {
         "type": "Direct",
-        "requested": "[15.5.0-preview-20170810-02, )",
+        "requested": "[15.5.0-preview-20170810-02 , )",
         "resolved": "15.5.0-preview-20170810-02",
         "contentHash": "x+uriTD0saQYn5rinVc+2/JPtFwkbRZJ1BertVe5R/zLmKO913r6GzWNpTkSfF82EfvyhX0eFCN24NmDNpFz7Q==",
         "dependencies": {
