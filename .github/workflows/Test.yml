@@ -15,10 +15,13 @@ jobs:
         NUGET_PACKAGES: ${{ github.workspace }}/hru/.nuget/packages
     steps:
       - uses: actions/checkout@v3
-      - uses: akv-platform/setup-dotnet@add-latest-patch-syntax
-        id: stepId
+      - uses: nogic1008/setup-dotnet@feat/nuget-cache
+        with:
+           cache: true
+           dotnet-version: "1.1"
       - run: |
-            echo "${{steps.stepId.outputs.dotnet-version}}"
+            dotnet restore test.csproj
+
             
           
         
