@@ -19,7 +19,7 @@ jobs:
       - run: |
          ./clearDotnetToolcache.ps1 ${{ runner.os }}
         shell: pwsh
-      - uses: actions/setup-dotnet@v3
+      - uses: actions/setup-dotnet@main
         with:
             dotnet-version: ${{matrix.version}}
       - run: |
