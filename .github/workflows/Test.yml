@@ -11,8 +11,8 @@ jobs:
           os: ["ubuntu-latest", "macos-latest", "windows-latest"]
     runs-on: ${{matrix.os}}
     continue-on-error: true
-    env:
-        NUGET_PACKAGES: ${{ github.workspace }}/hru/.nuget/packages
+    #env:
+        #NUGET_PACKAGES: ${{ github.workspace }}/hru/.nuget/packages
     steps:
       - uses: actions/checkout@v3
       - uses: nogic1008/setup-dotnet@feat/nuget-cache
