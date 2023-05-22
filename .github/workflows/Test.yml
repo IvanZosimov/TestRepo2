@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: |
-         ./clearDotnetToolcache.ps1
+         ./clearDotnetToolcache.ps1 ${{ runner.os }}
         shell: pwsh
       - uses: actions/setup-dotnet@v3
         with:
