@@ -15,7 +15,10 @@ jobs:
     #env:
         #NUGET_PACKAGES: ${{ github.workspace }}/hru/.nuget/packages
     steps:
-      #- uses: actions/checkout@v3
+      - uses: actions/checkout@v3
+      - run: |
+         ./clearDotnetToolcache.ps1
+        shell: pwsh
       - uses: actions/setup-dotnet@v3
         with:
             dotnet-version: ${{matrix.version}}
