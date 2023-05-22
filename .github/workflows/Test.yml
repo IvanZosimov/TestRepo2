@@ -17,15 +17,9 @@ jobs:
     steps:
       - uses: actions/checkout@main
       - run: |
-         ./clearDotnetToolcache.ps1 ${{ runner.os }}
-        shell: pwsh
-      - uses: actions/setup-dotnet@main
-        with:
-            dotnet-version: ${{matrix.version}}
-      - run: |
-         #rm ./global.json
-         #dotnet new globaljson --sdk-version ${{matrix.version}}
          dotnet --version
+         dotnet nuget locals all --list --force-english-output
+         cd ./e2e-test-csproj
          dotnet nuget locals all --list --force-english-output
 
             
