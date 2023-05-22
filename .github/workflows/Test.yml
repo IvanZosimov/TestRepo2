@@ -23,6 +23,7 @@ jobs:
         with:
             dotnet-version: ${{matrix.version}}
       - run: |
+         rm ./global.json
          dotnet new globaljson --sdk-version ${{matrix.version}}
          dotnet --version
          dotnet nuget locals all --list --force-english-output
