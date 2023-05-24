@@ -16,8 +16,11 @@ jobs:
         #NUGET_PACKAGES: ${{ github.workspace }}/hru/.nuget/packages
     steps:
       - uses: actions/setup-dotnet@main
+        id: dotnet
         with:
             dotnet-version: ${{matrix.version}}
+      - run: |
+          echo ${{steps.dotnet.outputs.dotnet-version}}
 
             
           
