@@ -17,8 +17,6 @@ jobs:
     steps:
       - uses: actions/setup-dotnet@main
         id: dotnet
-        with:
-            dotnet-version: ${{matrix.version}}
       - run: |
           echo ${{steps.dotnet.outputs.dotnet-version}}
 
