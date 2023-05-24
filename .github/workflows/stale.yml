@@ -11,6 +11,6 @@ jobs:
     steps:
       - run: |
           echo ${{ github.event.issue.number }}
-          echo ${{ github.repository.full_name }}
+          echo ${{ github.repository }}
           echo ${{ github.event.sender.login }}
 
