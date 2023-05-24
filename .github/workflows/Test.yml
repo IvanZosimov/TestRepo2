@@ -13,10 +13,10 @@ jobs:
     runs-on: ${{matrix.os}}
     continue-on-error: true
     steps:
-      - uses: actions/setup-dotnet@main
+      - uses: nogic1008/setup-dotnet@feat/nuget-cache
         with:
             dotnet-version: ${{matrix.version}}
-            dotnet-quality: "preview"
+            cache: dotnet
         id: dotnet
       - run: |
           echo ${{steps.dotnet.outputs.dotnet-version}}
