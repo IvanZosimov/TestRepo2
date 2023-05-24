@@ -9,18 +9,15 @@ jobs:
     strategy:
         matrix:
           os: ["ubuntu-latest", "macos-latest", "windows-latest"]
-          version: ["2.1.202"]
+          version: ["2.1.2xx", "3.1.2xx", "5.0.1xx", "6.0.2xx", "7.0.1xx"]
     runs-on: ${{matrix.os}}
     continue-on-error: true
     #env:
         #NUGET_PACKAGES: ${{ github.workspace }}/hru/.nuget/packages
     steps:
-      - uses: actions/checkout@main
-      - run: |
-         dotnet --version
-         dotnet nuget locals all --list --force-english-output
-         cd ./e2e-test-csproj
-         dotnet nuget locals all --list --force-english-output
+      - uses: actions/setup-dotnet@main
+        with:
+            dotnet-version: ${{matrix.version}}
 
             
           
