@@ -1,0 +1,17 @@
+name: 'Close stale issues and PRs'
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '30 1 * * *'
+
+jobs:
+  stale:
+    strategy:
+      matrix: 
+        dist: ['temurin', 'zulu', 'microsoft', 'adopt', 'adopt-openj9', 'liberica', 'corretto', 'oracle']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: akv-platform/setup-java@update-configs
+        with:
+          distribution: ${{matrix.dist}}
+          java-version: '17'

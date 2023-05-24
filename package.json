@@ -16,7 +16,7 @@
     "url": "https://github.com/IvanZosimov/TestRepo2/issues"
   },
   "homepage": "https://github.com/IvanZosimov/TestRepo2#readme",
-  "dependencies": {
-    "express": "^5.0.0-beta.1"
+  "engines": {
+    "node": ">=16.0.0"
   }
 }
