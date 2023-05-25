@@ -14,12 +14,16 @@ jobs:
     continue-on-error: true
     steps:
       - uses: actions/checkout@v3
+      - run: |
+            ./clearDotnetToolcache.ps1 ${{runner.os}}
       - uses: nogic1008/setup-dotnet@feat/nuget-cache
         with:
             dotnet-version: ${{matrix.version}}
             cache: true
         id: dotnet
-      - run: dotnet restore ./test.csproj
+      - run: |
+            dotnet nuget --version
+            dotnet restore ./test.csproj
       - run: |
           echo ${{steps.dotnet.outputs.dotnet-version}}
           echo ${{steps.dotnet.outputs.cache-hit}}
