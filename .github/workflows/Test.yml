@@ -16,10 +16,11 @@ jobs:
       - uses: nogic1008/setup-dotnet@feat/nuget-cache
         with:
             dotnet-version: ${{matrix.version}}
-            cache: dotnet
+            cache: true
         id: dotnet
       - run: |
           echo ${{steps.dotnet.outputs.dotnet-version}}
+          echo ${{steps.dotnet.outputs.cache-hit}}
 
             
           
