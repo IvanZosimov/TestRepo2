@@ -16,6 +16,7 @@ jobs:
       - uses: actions/checkout@v3
       - run: |
             ./clearDotnetToolcache.ps1 ${{runner.os}}
+        shell: pwsh
       - uses: nogic1008/setup-dotnet@feat/nuget-cache
         with:
             dotnet-version: ${{matrix.version}}
