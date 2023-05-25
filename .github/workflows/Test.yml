@@ -19,7 +19,7 @@ jobs:
             dotnet-version: ${{matrix.version}}
             cache: true
         id: dotnet
-      - run: dotnet restore ./test.csproj --locked-mode
+      - run: dotnet restore ./test.csproj
       - run: |
           echo ${{steps.dotnet.outputs.dotnet-version}}
           echo ${{steps.dotnet.outputs.cache-hit}}
