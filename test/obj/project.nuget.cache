@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "QLVst5vVjn+MkqS/jIRnhlCgRwzxBTZoZhzNKbJxvsGLO1PzMYc7pEK9BNA5MWjnvf5M7LApP1UaNz5rUtlpEQ==",
+  "dgSpecHash": "aHCFvfliFy3Z4lBncBMy360kSOEFx9Lj9boXHMlP67QL60G6wsb+ew+k+5UU3ntHEjrupZbPJBnQzbwzTPjCnw==",
   "success": true,
   "projectFilePath": "C:\\Users\\v-ivzosimov\\Desktop\\TestRepo2\\TestRepo2\\test\\test.csproj",
   "expectedPackageFiles": [
@@ -15,7 +15,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.win32.registry\\4.3.0\\microsoft.win32.registry.4.3.0.nupkg.sha512",
     "C:\\Users\\v-ivzosimov\\.nuget\\packages\\mstest.testadapter\\1.2.0\\mstest.testadapter.1.2.0.nupkg.sha512",
-    "C:\\Users\\v-ivzosimov\\.nuget\\packages\\mstest.testframework\\1.1.18\\mstest.testframework.1.1.18.nupkg.sha512",
+    "C:\\Users\\v-ivzosimov\\.nuget\\packages\\mstest.testframework\\1.2.0\\mstest.testframework.1.2.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\newtonsoft.json\\9.0.1\\newtonsoft.json.9.0.1.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
@@ -110,16 +110,5 @@
     "C:\\Users\\v-ivzosimov\\.nuget\\packages\\system.xml.xpath\\4.0.1\\system.xml.xpath.4.0.1.nupkg.sha512",
     "C:\\Users\\v-ivzosimov\\.nuget\\packages\\system.xml.xpath.xmldocument\\4.0.1\\system.xml.xpath.xmldocument.4.0.1.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1601",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Dependency specified was MSTest.TestAdapter (>= 1.1.19) but ended up with MSTest.TestAdapter 1.2.0.",
-      "libraryId": "MSTest.TestAdapter",
-      "targetGraphs": [
-        "net7.0"
-      ]
-    }
-  ]
+  "logs": []
 }

@@ -13,7 +13,7 @@
       },
       "MSTest.TestAdapter": {
         "type": "Direct",
-        "requested": "[1.1.19, )",
+        "requested": "[1.2.0, )",
         "resolved": "1.2.0",
         "contentHash": "n0xgVkGNisHCHJNTfDBQBWsp3pdFMEkvex3ah7ybAa4NEIXc+rp1Kpa4tsScTNZKH0uzpR6BZ14sJvtwPm4VgQ==",
         "dependencies": {
@@ -23,9 +23,9 @@
       },
       "MSTest.TestFramework": {
         "type": "Direct",
-        "requested": "[1.1.18, )",
-        "resolved": "1.1.18",
-        "contentHash": "EwG96XXPvZnqGkWVhQnh1H/KU0orFbRCUxWYa5FQA9/DsnV4qZEQWf6CeeQvmLBjZ7Ly36Gsi4jbqpRI84KA/w=="
+        "requested": "[1.2.0, )",
+        "resolved": "1.2.0",
+        "contentHash": "8MLtlVC0UrqrMeE7V4VmSEFiApgvtUHLizJv0W1DTCOrxyY4YPhlbcClUkLtw4I5sD5P/YWP2S+rL3/MW2pM3Q=="
       },
       "Microsoft.CSharp": {
         "type": "Transitive",
