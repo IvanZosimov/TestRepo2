@@ -23,7 +23,7 @@ jobs:
 #             cache: true
         id: dotnet
       - run: |
-            dotnet restore ./e2e-test-csproj/test.csproj
+            dotnet restore ./test/test.csproj
       - run: |
           echo ${{steps.dotnet.outputs.dotnet-version}}
           echo ${{steps.dotnet.outputs.cache-hit}}
