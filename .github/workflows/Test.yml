@@ -19,8 +19,11 @@ jobs:
               6.0
               7.0
             cache: true
+            cache-dependency-path: "**/packages.lock.json"
         id: dotnet
       - run: |
+            dotnet restore ./test/test.csproj --locked-mode
+            dotnet restore ./test2/test.csproj --locked-mode
             dotnet restore ./test.csproj --locked-mode
       - run: |
           echo ${{steps.dotnet.outputs.dotnet-version}}
