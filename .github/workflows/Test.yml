@@ -9,27 +9,19 @@ jobs:
     strategy:
         matrix:
           os: ["ubuntu-latest", "macos-latest", "windows-latest"]
-          version: ["6.0"]
     runs-on: ${{matrix.os}}
     continue-on-error: true
     steps:
       - uses: actions/checkout@v3
-      - run: |
-            ./clearDotnetToolcache.ps1 ${{runner.os}}
-        shell: pwsh
       - uses: nogic1008/setup-dotnet@feat/nuget-cache
         with:
-            dotnet-version: ${{matrix.version}}
-#             cache: true
+            dotnet-version: |
+              6.0
+              7.0
+            cache: true
         id: dotnet
       - run: |
-            dotnet nuget locals all --clear
-            dotnet restore ./test/test.csproj
+            dotnet restore ./test.csproj --locked-mode
       - run: |
           echo ${{steps.dotnet.outputs.dotnet-version}}
           echo ${{steps.dotnet.outputs.cache-hit}}
-
-            
-          
-        
-
