@@ -18,7 +18,7 @@ jobs:
         $Name = "@${{github.event.sender.login}}"
         $PrNumber = "${{github.event.pull_request.number}}"
         $IssueNumber = "${{github.event.issue.number}}"
-        echo "ISSUE_NUMBER=$($IssueNumber)" >> "$GITHUB_OUTPUT"
+        echo "ISSUE_NUMBER=$IssueNumber" >> "$GITHUB_OUTPUT"
       shell: pwsh
       
     - name: Response to the newly created Issue
