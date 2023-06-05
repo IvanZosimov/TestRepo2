@@ -2,29 +2,21 @@
 name: Context testing
 on: 
     workflow_dispatch:
-    #push:
+    pull_request: 
+        types: [opened]
+    issues: 
+        types: [opened]
     
 jobs:
-  test1:
-    strategy:
-        matrix:
-          os: ["ubuntu-latest", "macos-latest", "windows-latest"]
-    runs-on: ${{matrix.os}}
-    continue-on-error: true
+  create-response:
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: nogic1008/setup-dotnet@feat/nuget-cache
-        with:
-            dotnet-version: |
-              6.0
-              7.0
-            cache: true
-            cache-dependency-path: "**/packages.lock.json"
-        id: dotnet
-      - run: |
-            dotnet restore ./test/test.csproj --locked-mode
-            dotnet restore ./test2/test.csproj --locked-mode
-            dotnet restore ./test.csproj --locked-mode
-      - run: |
-          echo ${{steps.dotnet.outputs.dotnet-version}}
-          echo ${{steps.dotnet.outputs.cache-hit}}
+    - name: Response to the newly created Issue
+      if: ${{ github.event_name == "issue"}}
+      run: |
+        echo "Issue created"
+
+    - name: Response to the newly created PR
+      if: ${{ github.event_name == "pull_request" }}
+      run: |
+        echo "PR created"
