@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        echo ${{ github.event_name }}
+        echo ${{ github.event }}
     - name: Response to the newly created Issue
       if: ${{ github.event_name == 'issues' }}
       run: |
