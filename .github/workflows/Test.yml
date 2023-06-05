@@ -12,11 +12,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Response to the newly created Issue
-      if: ${{ github.event_name == "issue"}}
+      if: ${{ github.event_name == 'issue' }}
       run: |
         echo "Issue created"
 
     - name: Response to the newly created PR
-      if: ${{ github.event_name == "pull_request" }}
+      if: ${{ github.event_name == 'pull_request' }}
       run: |
         echo "PR created"
