@@ -14,7 +14,7 @@ jobs:
     - run: |
         echo ${{ github.event_name }}
     - name: Response to the newly created Issue
-      if: ${{ github.event_name == 'issue' }}
+      if: ${{ github.event_name == 'issues' }}
       run: |
         echo "Issue created"
 
