@@ -46,4 +46,3 @@ jobs:
         -d '{"body":"Test Comment"}'
         echo "Comment created"
         echo "PR created"
-      shell: pwsh
