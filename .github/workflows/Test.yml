@@ -19,12 +19,12 @@ jobs:
         $PrNumber = "${{github.event.pull_request.number}}"
         $IssueNumber = "${{github.event.issue.number}}"
         echo "ISSUE_NUMBER=$($IssueNumber)" >> "$GITHUB_OUTPUT"
-        echo "PR_NUMBER=$($PrNumber)" >> "$GITHUB_OUTPUT"
       shell: pwsh
       
     - name: Response to the newly created Issue
       if: ${{ github.event_name == 'issues' }}
       run: |
+        echo ${{ steps.unique.outputs.ISSUE_NUMBER }}
         curl -L \
         -X POST \
         -H "Accept: application/vnd.github+json" \
