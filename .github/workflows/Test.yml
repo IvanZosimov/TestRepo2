@@ -8,6 +8,12 @@ on:
         types: [opened]
     
 jobs:
-  call-reusable-workflow:
-    name: automatic reply
-    uses: akv-platform/reusable-workflows/.github/workflows/automatic-reply.yml@add-automatic-response
+  automatic-reply:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+       echo ${{ github.event.pull_request}}
+      
+#   call-reusable-workflow:
+#     name: automatic reply
+#     uses: akv-platform/reusable-workflows/.github/workflows/automatic-reply.yml@add-automatic-response
