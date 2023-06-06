@@ -11,3 +11,5 @@ jobs:
   call-reusable-workflow:
     name: automatic reply
     uses: akv-platform/reusable-workflows/.github/workflows/automatic-response.yml@add-automatic-response
+    with:
+        issue-comment: "Hello <userName>, how are you? See, <userName>, it works like magic!"
