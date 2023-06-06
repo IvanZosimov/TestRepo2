@@ -8,6 +8,12 @@ on:
         types: [opened]
     
 jobs:       
-  call-reusable-workflow:
-    name: automatic reply
-    uses: akv-platform/reusable-workflows/.github/workflows/automatic-reply.yml@add-automatic-response
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: | 
+            curl -H "Authorization: bearer ${{github.token}}" -X POST -d " \
+            { \
+             \"query\": \"query { viewer { login }}\" \
+             } \
+            " https://api.github.com/graphql
