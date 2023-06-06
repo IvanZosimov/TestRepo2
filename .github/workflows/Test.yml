@@ -14,6 +14,29 @@ jobs:
       - run: | 
             curl -H "Authorization: bearer ${{github.token}}" -X POST -d " \
             { \
-             \"query\": \"query { viewer { login }}\" \
+             \"query\": \"query { organization(login: "actions") {
+                projectV2(number: 19) {
+                  items(first: 1, after: "") {
+                    edges {
+                      cursor
+                      node {
+                        fieldValueByName(name: "Status") {
+                          ... on ProjectV2ItemFieldSingleSelectValue {
+                            optionId
+                          }
+                        }
+                        content {
+                          ... on PullRequest {
+                            url
+                          }
+                          ... on Issue {
+                            url
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }}\" \
              } \
             " https://api.github.com/graphql
