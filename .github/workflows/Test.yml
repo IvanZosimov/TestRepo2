@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: | 
-            curl -H "Authorization: bearer ${{github.token}}" -X POST -d " \
+            curl -H "Authorization: bearer ${{secrets.PAT}}" -X POST -d " \
             { \
              \"query\": \"query {
               organization(login: "actions") {
