@@ -14,7 +14,8 @@ jobs:
       - run: | 
             curl -H "Authorization: bearer ${{github.token}}" -X POST -d " \
             { \
-             \"query\": \"query { organization(login: "actions") {
+             \"query\": \"query {
+              organization(login: "actions") {
                 projectV2(number: 19) {
                   items(first: 1, after: "") {
                     edges {
@@ -37,6 +38,7 @@ jobs:
                     }
                   }
                 }
-              }}\" \
+              }
+            }\" \
              } \
             " https://api.github.com/graphql
