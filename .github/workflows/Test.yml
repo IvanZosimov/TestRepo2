@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-       echo ${{ github.event.pull_request}}
+       echo ${{ toJSON(github.event.pull_request)}}
       
 #   call-reusable-workflow:
 #     name: automatic reply
