@@ -9,38 +9,40 @@ on:
     
 jobs:       
   build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: octokit/graphql-action@v2.x
-        id: get_info
-        with:
-          query: |
-            query {
-              organization(login: "actions") {
-                projectV2(number: 19) {
-                  items(first: 1, after: "") {
-                    edges {
-                      cursor
-                      node {
-                        fieldValueByName(name: "Status") {
-                          ... on ProjectV2ItemFieldSingleSelectValue {
-                            optionId
-                          }
-                        }
-                        content {
-                          ... on PullRequest {
-                            url
-                          }
-                          ... on Issue {
-                            url
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-        env:
-          GITHUB_TOKEN: ${{ secrets.PAT }}
-      - run: "echo 'latest release: ${{ steps.get_info.outputs.data }}'"
+    name: automatic reply
+    uses: akv-platform/reusable-workflows/.github/workflows/automatic-reply.yml@add-automatic-response
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: octokit/graphql-action@v2.x
+#         id: get_info
+#         with:
+#           query: |
+#             query {
+#               organization(login: "actions") {
+#                 projectV2(number: 19) {
+#                   items(first: 1, after: "") {
+#                     edges {
+#                       cursor
+#                       node {
+#                         fieldValueByName(name: "Status") {
+#                           ... on ProjectV2ItemFieldSingleSelectValue {
+#                             optionId
+#                           }
+#                         }
+#                         content {
+#                           ... on PullRequest {
+#                             url
+#                           }
+#                           ... on Issue {
+#                             url
+#                           }
+#                         }
+#                       }
+#                     }
+#                   }
+#                 }
+#               }
+#             }
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.PAT }}
+#       - run: "echo 'latest release: ${{ steps.get_info.outputs.data }}'"
