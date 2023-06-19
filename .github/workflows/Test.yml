@@ -1,15 +1,26 @@
-
 name: Context testing
 on: 
+    issues:
+      types: [opened]
+    schedule:
+      - cron: '0 9 * * 1-5'
     workflow_dispatch:
-    pull_request: 
-        types: [opened]
-    issues: 
-        types: [opened]
-    
+      inputs:
+        logIntoSlack:
+          description: 'Send message to the Slack channel?'
+          required: false
+          default: true
+          type: boolean
+
 jobs:
-   build:
+   board-automation:
     runs-on: ubuntu-latest
     steps:
+     - uses: actions/checkout@v3
+     - uses: actions/setup-node@v3
+       with:
+        node-version: 'lts/*'
      - run: |
-         echo ${{ toJSON(${{github.event}}) }}
+        echo ${{ inputs.logIntoSlack }}
+       env:
+        LOG_INTO_SLACK: ${{ inputs.logIntoSlack }}
