@@ -10,4 +10,6 @@ on:
 jobs:
    auto-response:
     uses: akv-platform/reusable-workflows/.github/workflows/automatic-reply.yml@add-automatic-response
+    with:
+        reply-to: "pull_requests"
      
