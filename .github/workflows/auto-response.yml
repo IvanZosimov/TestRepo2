@@ -9,7 +9,5 @@ on:
 
 jobs:
    auto-response:
-    runs-on: ubuntu-latest
-    steps:
-     - uses: akv-platform/reusable-workflows/.github/workflows/automatic-reply.yml@board-automation
+    uses: akv-platform/reusable-workflows/.github/workflows/automatic-reply.yml@board-automation
      
