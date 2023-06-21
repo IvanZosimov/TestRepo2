@@ -1,0 +1,15 @@
+name: Auto response test
+on: 
+    issues:
+      types: [opened]
+    pull_request:
+      types: [opened]
+    workflow_dispatch:
+      
+
+jobs:
+   auto-response:
+    runs-on: ubuntu-latest
+    steps:
+     - uses: akv-platform/reusable-workflows/.github/workflows/automatic-reply.yml@board-automation
+     
