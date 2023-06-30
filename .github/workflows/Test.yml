@@ -21,6 +21,6 @@ jobs:
        with:
         node-version: 'lts/*'
      - run: |
-        echo ${{ inputs.logIntoSlack === '' || inputs.logIntoSlack }}
+        echo $LOG_INTO_SLACK
        env:
         LOG_INTO_SLACK: ${{ inputs.logIntoSlack }}
