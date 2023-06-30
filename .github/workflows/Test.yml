@@ -9,8 +9,8 @@ on:
         logIntoSlack:
           description: 'Send message to the Slack channel?'
           required: false
-          default: true
-          type: boolean
+          default: "true"
+          type: string
 
 jobs:
    board-automation:
@@ -21,6 +21,6 @@ jobs:
        with:
         node-version: 'lts/*'
      - run: |
-        echo ${{ inputs.logIntoSlack == '' || inputs.logIntoSlack  }}
+        echo ${{ inputs.logIntoSlack == '' || 'true'  }}
        env:
         LOG_INTO_SLACK: ${{ inputs.logIntoSlack }}
