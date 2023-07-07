@@ -9,4 +9,4 @@ jobs:
       pull-requests: write
     runs-on: ubuntu-latest
     steps:
-    - uses: akv-platform/@feat/local-config
+    - uses: akv-platform/labeler/@feat/local-config
