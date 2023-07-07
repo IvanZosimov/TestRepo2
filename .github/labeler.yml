@@ -1,2 +1,2 @@
-touched-a-pdf-file:
-  - any: ['*.pdf']
+touched-a-md-file:
+  - any: ['*.md']
