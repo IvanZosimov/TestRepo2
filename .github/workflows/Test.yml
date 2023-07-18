@@ -20,8 +20,8 @@ jobs:
         - run: |
             echo $RUNNER_ENVIRONMENT
             echo $AGENT_ISSELFHOSTED
-          if: ${{ matrix.os != "windows-latest" }}
+          if: ${{ matrix.os != 'windows-latest' }}
         - run: |
             echo $Env:RUNNER_ENVIRONMENT
             echo $Env:AGENT_ISSELFHOSTED
-          if: ${{ matrix.os == "windows-latest" }}
+          if: ${{ matrix.os == 'windows-latest' }}
