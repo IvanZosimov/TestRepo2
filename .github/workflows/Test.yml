@@ -17,11 +17,6 @@ jobs:
             os: [ubuntu-latest, windows-latest, macos-latest]
     runs-on: ${{matrix.os}}
     steps:
-        - run: |
-            echo $RUNNER_ENVIRONMENT
-            echo $AGENT_ISSELFHOSTED
-          if: ${{ matrix.os != 'windows-latest' }}
-        - run: |
-            echo $Env:RUNNER_ENVIRONMENT
-            echo $Env:AGENT_ISSELFHOSTED
-          if: ${{ matrix.os == 'windows-latest' }}
+        - uses: IvanZosimov/setup-go@performance
+          with:
+            go-version: "1.20.6"
