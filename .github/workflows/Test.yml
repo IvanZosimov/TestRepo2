@@ -14,9 +14,9 @@ jobs:
    board-automation:
     strategy:
         matrix:
-            os: [ubuntu-latest, windows-latest, macos-latest]
+            os: [windows-latest]
     runs-on: ${{matrix.os}}
     steps:
-        - uses: IvanZosimov/setup-go@performance
+        - uses: actions/setup-go@main
           with:
             go-version: "1.20.6"
