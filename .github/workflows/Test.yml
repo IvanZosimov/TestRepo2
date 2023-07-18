@@ -17,11 +17,11 @@ jobs:
             os: [ubuntu-latest, windows-latest, macos-latest]
     runs-on: ${{matrix.os}}
     steps:
-        - uses: actions/setup-java@v3
-          with:
-            distribution: temurin
-            java-version: 17
-        - uses: gradle/gradle-build-action@v2
-          with:
-            gradle-version: "6.8.3"
-        - run: gradle --version
+        - run: |
+            echo $RUNNER_ENVIRONMENT
+            echo $AGENT_ISSELFHOSTED
+          if: ${{ matrix.os != "windows-latest" }}
+        - run: |
+            echo $Env:RUNNER_ENVIRONMENT
+            echo $Env:AGENT_ISSELFHOSTED
+          if: ${{ matrix.os == "windows-latest" }}
