@@ -18,7 +18,7 @@ jobs:
     runs-on: ${{matrix.os}}
     steps:
         - uses: actions/checkout@v3
-        - uses: actions/setup-java@v3
+        - uses: Endi327/setup-java@include-versions.properties-in-cache-key
           with:
             distribution: 'temurin' # See 'Supported distributions' for available options
             java-version: '17'
