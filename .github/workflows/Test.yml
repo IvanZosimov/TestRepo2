@@ -14,7 +14,7 @@ jobs:
    board-automation:
     strategy:
         matrix:
-            os: [self-hosted]
+            os: [ubuntu-self-hosted]
             try: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n"]
     runs-on: ${{matrix.os}}
     steps:
