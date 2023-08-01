@@ -14,12 +14,11 @@ jobs:
    board-automation:
     strategy:
         matrix:
-            os: [ubuntu-self-hosted]
-            try: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n"]
+            os: [ubuntu-latest]
     runs-on: ${{matrix.os}}
     steps:
         - uses: actions/setup-java@v3
           with:
             distribution: 'adopt'
-            java-version: '17'
+            java-version: '11'
 
