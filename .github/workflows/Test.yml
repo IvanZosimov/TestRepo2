@@ -19,6 +19,6 @@ jobs:
     steps:
         - uses: actions/setup-java@v3
           with:
-            distribution: 'temurin'
-            java-version: '11.0.9+11'
+            distribution: 'adopt-openj9'
+            java-version: '11'
 
