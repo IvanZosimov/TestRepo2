@@ -14,11 +14,11 @@ jobs:
    board-automation:
     strategy:
         matrix:
-            os: [ubuntu-latest]
+            os: [macos-latest]
     runs-on: ${{matrix.os}}
     steps:
-        - uses: actions/setup-java@v3
+        - uses: actions/setup-python@v3
           with:
-            distribution: 'adopt'
-            java-version: '11'
+            python-version: "3.10"
+        - run: pip debug -v
 
