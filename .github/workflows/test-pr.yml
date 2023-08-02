@@ -1,0 +1,20 @@
+name: Test pr
+on: 
+     pull_request:
+
+#    workflow_dispatch:
+#       inputs:
+#         logIntoSlack:
+#           description: 'Send message to the Slack channel?'
+#           required: false
+#           default: true
+#           type: boolean
+
+jobs:
+   board-automation:
+    strategy:
+        matrix:
+            os: [ubuntu-latest]
+    runs-on: ${{matrix.os}}
+    steps:
+        - run: echo "Hahaha"
