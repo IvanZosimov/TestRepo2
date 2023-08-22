@@ -1,26 +1,16 @@
 name: Context testing
 on: 
-#     issues:
-#       types: [opened]
     workflow_dispatch:
-#       inputs:
-#         logIntoSlack:
-#           description: 'Send message to the Slack channel?'
-#           required: false
-#           default: true
-#           type: boolean
 
 jobs:
    board-automation:
     strategy:
         matrix:
-            os: [macos-latest]
+            os: [windows-latest]
     runs-on: ${{matrix.os}}
     steps:
-        - uses: actions/setup-python@v3
+        - uses: actions/setup-java@v3.6.0
           with:
-            python-version: "3.10.5"
-        - run: pip debug -v
-        - run: python -m pip install -U pip
-        - run: pip debug -v
+              java-version: '17'
+              distribution: 'temurin'
 
