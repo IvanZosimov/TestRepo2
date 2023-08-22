@@ -13,4 +13,5 @@ jobs:
           with:
               java-version: '17'
               distribution: 'adopt'
+              check-latest: 'false'
 
