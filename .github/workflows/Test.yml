@@ -10,7 +10,7 @@ jobs:
     runs-on: ${{matrix.os}}
     steps:
         - run: |
-            Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full" -Name Version).Version
+            (Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full" -Name Version).Version
         # - uses: actions/setup-java@v3
         #   with:
         #       java-version: '17'
