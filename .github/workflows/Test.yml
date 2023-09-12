@@ -11,6 +11,6 @@ jobs:
     steps:
         - uses: IvanZosimov/setup-java@dragonwell
           with:
-            java-version: "17"
+            java-version: "18"
             distribution: "dragonwell"
 
