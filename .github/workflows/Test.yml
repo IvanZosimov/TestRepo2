@@ -11,6 +11,6 @@ jobs:
     steps:
         - uses: Accelerator1996/setup-java@main
           with:
-            java-version: "8.8.x"
+            java-version: "11.0.11"
             distribution: "dragonwell"
 
