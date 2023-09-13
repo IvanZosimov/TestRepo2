@@ -9,8 +9,9 @@ jobs:
             os: [ubuntu-latest]
     runs-on: ${{matrix.os}}
     steps:
-        - uses: IvanZosimov/setup-java@dragonwell
+        - uses: Accelerator1996/setup-java@main
           with:
-            java-version: "11.0.*"
+            java-version: "11"
             distribution: "dragonwell"
+            java-package: "jdk"
 
