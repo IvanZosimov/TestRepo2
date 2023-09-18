@@ -9,8 +9,7 @@ jobs:
             os: [ubuntu-latest, macos-latest, windows-latest]
     runs-on: ${{matrix.os}}
     steps:
-        - uses: actions/setup-go@main
+        - uses: IvanZosimov/setup-java@dragonwell-test
           with:
-            go-version: "1.21"
-            cache: false
+            java-version: "17.x"
 
