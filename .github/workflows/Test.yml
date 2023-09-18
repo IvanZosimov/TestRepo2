@@ -12,4 +12,5 @@ jobs:
         - uses: IvanZosimov/setup-java@dragonwell-test
           with:
             java-version: "17.x"
+            distribution: "dragonwell"
 
