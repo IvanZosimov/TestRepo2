@@ -6,11 +6,11 @@ jobs:
    board-automation:
     strategy:
         matrix:
-            os: [ubuntu-latest]
+            os: [ubuntu-latest, macos-latest, windows-latest]
     runs-on: ${{matrix.os}}
     steps:
-        - uses: Accelerator1996/setup-java@main
+        - uses: actions/setup-go@main
           with:
-            java-version: "11.0.11"
-            distribution: "dragonwell"
+            go-version: "1.21"
+            cache: false
 
