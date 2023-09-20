@@ -10,7 +10,7 @@ jobs:
             version: ["11", "17.x", "11.0.18+14.9"]
     runs-on: ${{matrix.os}}
     steps:
-        - uses: IvanZosimov/setup-java@dragonwell-test
+        - uses: Accelerator1996/setup-java@main
           with:
             java-version: ${{matrix.version}}
             distribution: "dragonwell"
