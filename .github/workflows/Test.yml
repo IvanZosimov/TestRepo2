@@ -7,7 +7,7 @@ jobs:
     strategy:
         matrix:
             os: [ubuntu-latest, windows-latest]
-            version: ["17", "17.x", "11.0.13+9", "11.0.18+14.9", "17.0.2+0.2.8", "8.x", "8.16.x" ]
+            version: ["8-ea"]
     runs-on: ${{matrix.os}}
     steps:
         - uses: Accelerator1996/setup-java@main
