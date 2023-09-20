@@ -7,10 +7,10 @@ jobs:
     strategy:
         matrix:
             os: [ubuntu-latest]
-            version: ["11-ea"]
+            version: ["11", "17.x", "11.0.18+14.9"]
     runs-on: ${{matrix.os}}
     steps:
-        - uses: Accelerator1996/setup-java@main
+        - uses: IvanZosimov/setup-java@dragonwell-test
           with:
             java-version: ${{matrix.version}}
             distribution: "dragonwell"
