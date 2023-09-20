@@ -7,13 +7,13 @@ jobs:
     strategy:
         matrix:
             os: [ubuntu-latest]
-            version: ["8"]
+            version: ["11"]
     runs-on: ${{matrix.os}}
     steps:
         - uses: Accelerator1996/setup-java@main
           with:
             java-version: ${{matrix.version}}
             distribution: "dragonwell"
-            architecture: "aarch64"
+            architecture: "riscv"
         - run: java -version
 
