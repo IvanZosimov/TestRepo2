@@ -7,12 +7,12 @@ jobs:
     strategy:
         matrix:
             os: [ubuntu-latest]
-            version: ["11", "17.x", "11.0.18+14.9"]
+            version: ["22-ea"]
     runs-on: ${{matrix.os}}
     steps:
         - uses: actions/setup-java@v3
           with:
             java-version: ${{matrix.version}}
-            distribution: "dragonwell"
+            distribution: "zulu"
         - run: java -version
 
