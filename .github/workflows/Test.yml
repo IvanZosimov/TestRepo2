@@ -8,7 +8,7 @@ jobs:
         matrix:
             os: [ubuntu-latest]
             version: ["21"]
-            distro: ["temurin", "adopt", "liberica", "adopt-openj9", "liberica", "microsoft", "corretto", "semeru"]
+            distro: ["temurin", "adopt", "liberica", "adopt-openj9", "microsoft", "corretto", "semeru"]
     runs-on: ${{matrix.os}}
     continue-on-error: true
     steps:
