@@ -8,11 +8,13 @@ jobs:
         matrix:
             os: [ubuntu-latest]
             version: ["21"]
+            distro: ["temurin", "adopt", "liberica", "adopt-openj9", "liberica", "microsoft", "corretto", "semeru"]
     runs-on: ${{matrix.os}}
+    continue-on-error: true
     steps:
         - uses: actions/setup-java@v3
+          
           with:
             java-version: ${{matrix.version}}
-            distribution: "zulu"
-        - run: java -version
+            distribution: ${{matrix.distro}}
 
