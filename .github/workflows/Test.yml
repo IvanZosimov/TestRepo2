@@ -13,6 +13,6 @@ jobs:
         - uses: actions/setup-java@v3
           with:
             java-version: ${{matrix.version}}
-            distribution: "oracle"
+            distribution: "zulu"
         - run: java -version
 
