@@ -1,9 +1,9 @@
-name: Context testing
+name: Test
 on: 
     workflow_dispatch:
 
 jobs:
-   board-automation:
+   test:
     strategy:
         matrix:
             os: [ubuntu-latest]
