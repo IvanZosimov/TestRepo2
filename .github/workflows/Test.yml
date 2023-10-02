@@ -7,8 +7,8 @@ jobs:
     strategy:
         matrix:
             os: [ubuntu-latest]
-            version: ["21"]
-            distro: ["temurin", "adopt", "liberica", "adopt-openj9", "microsoft", "corretto", "semeru"]
+            version: ["17"]
+            distro: ["temurin"]
     runs-on: ${{matrix.os}}
     continue-on-error: true
     steps:
@@ -17,4 +17,6 @@ jobs:
           with:
             java-version: ${{matrix.version}}
             distribution: ${{matrix.distro}}
+            java-package: 'jre'
+        - run: echo $JAVA_HOME
 
