@@ -18,5 +18,8 @@ jobs:
             java-version: ${{matrix.version}}
             distribution: ${{matrix.distro}}
             java-package: 'jre'
-        - run: echo $JAVA_HOME
+        - run: |
+            echo $JAVA_HOME
+            which java
+            java --version
 
