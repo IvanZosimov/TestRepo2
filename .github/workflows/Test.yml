@@ -7,8 +7,8 @@ jobs:
     strategy:
         matrix:
             os: [ubuntu-latest]
-            version: ["17"]
-            distro: ["temurin"]
+            version: ["21"]
+            distro: ["oracle"]
     runs-on: ${{matrix.os}}
     continue-on-error: true
     steps:
@@ -17,7 +17,6 @@ jobs:
           with:
             java-version: ${{matrix.version}}
             distribution: ${{matrix.distro}}
-            java-package: 'jre'
         - run: |
             echo $JAVA_HOME
             which java
