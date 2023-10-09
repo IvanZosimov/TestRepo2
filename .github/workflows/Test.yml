@@ -8,11 +8,11 @@ jobs:
         matrix:
             os: [ubuntu-latest]
             version: ["21"]
-            distro: ["oracle"]
+            distro: ["microsoft"]
     runs-on: ${{matrix.os}}
     continue-on-error: true
     steps:
-        - uses: actions/setup-java@v3
+        - uses: ralfstuckert/setup-java@main
           
           with:
             java-version: ${{matrix.version}}
