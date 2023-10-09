@@ -6,7 +6,7 @@ jobs:
    test:
     strategy:
         matrix:
-            os: [ubuntu-latest]
+            os: [windows-latest]
             version: ["21.x"]
             distro: ["microsoft"]
     runs-on: ${{matrix.os}}
