@@ -6,14 +6,13 @@ jobs:
    test:
     strategy:
         matrix:
-            os: [windows-latest]
-            version: ["21.x"]
+            os: [ubuntu-latest]
+            version: ["21"]
             distro: ["microsoft"]
-    runs-on: ${{matrix.os}}
+    # runs-on: ${{matrix.os}}
     continue-on-error: true
     steps:
         - uses: ralfstuckert/setup-java@main
-          
           with:
             java-version: ${{matrix.version}}
             distribution: ${{matrix.distro}}
