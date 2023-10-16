@@ -8,7 +8,7 @@ jobs:
         matrix:
             os: [ubuntu-latest]
             version: ["21"]
-            distro: ["microsoft"]
+            distro: ["temurin"]
     runs-on: ${{matrix.os}}
     # continue-on-error: true
     steps:
