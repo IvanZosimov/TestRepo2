@@ -11,11 +11,14 @@ jobs:
             distro: ["temurin"]
     runs-on: ${{matrix.os}}
     # continue-on-error: true
+    env:
+      SEGMENT_DOWNLOAD_TIMEOUT_MINS: '5'
     steps:
         - uses: actions/setup-java@main
           with:
             java-version: ${{matrix.version}}
             distribution: ${{matrix.distro}}
+            cache: "maven"
         - run: |
             echo $JAVA_HOME
             which java
