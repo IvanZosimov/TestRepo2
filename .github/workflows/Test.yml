@@ -20,8 +20,11 @@ jobs:
             java-version: ${{matrix.version}}
             distribution: ${{matrix.distro}}
             cache: "maven"
-        - run: |
-            echo $JAVA_HOME
-            which java
-            java --version
+        - name: Create files to cache
+          run: |
+              mvn verify -f ./pom.xml
+              if [ ! -d ~/.m2/repository ]; then
+                echo "::error::The ~/.m2/repository directory does not exist unexpectedly"
+                exit 1
+          fi
 
