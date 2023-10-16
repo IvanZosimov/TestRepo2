@@ -26,5 +26,5 @@ jobs:
               if [ ! -d ~/.m2/repository ]; then
                 echo "::error::The ~/.m2/repository directory does not exist unexpectedly"
                 exit 1
-          fi
+              fi
 
