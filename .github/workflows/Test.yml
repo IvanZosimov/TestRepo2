@@ -12,7 +12,7 @@ jobs:
     runs-on: ${{matrix.os}}
     # continue-on-error: true
     steps:
-        - uses: ralfstuckert/setup-java@main
+        - uses: actions/setup-java@main
           with:
             java-version: ${{matrix.version}}
             distribution: ${{matrix.distro}}
