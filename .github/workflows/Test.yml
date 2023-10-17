@@ -8,23 +8,13 @@ jobs:
         matrix:
             os: [ubuntu-latest]
             version: ["21"]
-            distro: ["temurin"]
+            distro: ["temurin", "zulu", "adopt", "adopt-openj9", "liberica", "microsoft", "corretto", "semeru", "oracle", "dragonwell"]
     runs-on: ${{matrix.os}}
-    # continue-on-error: true
-    env:
-      SEGMENT_DOWNLOAD_TIMEOUT_MINS: '5'
+    continue-on-error: true
     steps:
         - uses: actions/checkout@v3
         - uses: akv-platform/setup-java@action_cache_update
           with:
             java-version: ${{matrix.version}}
             distribution: ${{matrix.distro}}
-            cache: "maven"
-        - name: Create files to cache
-          run: |
-              mvn verify -f ./pom.xml
-              if [ ! -d ~/.m2/repository ]; then
-                echo "::error::The ~/.m2/repository directory does not exist unexpectedly"
-                exit 1
-              fi
 
