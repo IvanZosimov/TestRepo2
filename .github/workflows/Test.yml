@@ -13,12 +13,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Run setup-java with the cache for maven
-        uses: actions/setup-java@v3
+        uses: itchyny/setup-java@feat-cache-dependency-path
         id: setup-java
         with:
           distribution: 'adopt'
           java-version: '11'
           cache: maven
+          cache-dependency-path: "./pom.xml"
       - name: Create files to cache
         run: |
           mvn verify -f ./pom.xml
@@ -37,12 +38,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Run setup-java with the cache for maven
-        uses: actions/setup-java@v3
+        uses: itchyny/setup-java@feat-cache-dependency-path
         id: setup-java
         with:
           distribution: 'adopt'
           java-version: '11'
           cache: maven
+          cache-dependency-path: "./pom.xml"
       - name: Confirm that ~/.m2/repository directory has been made
         run: |
           if [ ! -d ~/.m2/repository ]; then
