@@ -19,7 +19,7 @@ jobs:
           distribution: 'adopt'
           java-version: '11'
           cache: maven
-          cache-dependency-path: "./pom.xml"
+          cache-dependency-path: "./*pom.xml"
       - name: Create files to cache
         run: |
           mvn verify -f ./pom.xml
