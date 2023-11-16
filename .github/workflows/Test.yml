@@ -23,7 +23,7 @@ jobs:
           gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
           gpg-passphrase: GPG_PASSPHRASE
       - run: |
-           gpg -version
+           gpg --version
            cat $HOME/.m2/settings.xml
       # - name: Checkout
       #   uses: actions/checkout@v4
