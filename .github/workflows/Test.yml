@@ -9,46 +9,13 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest]
+    env:
+      NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Run setup-java with the cache for maven
-        uses: itchyny/setup-java@feat-cache-dependency-path
-        id: setup-java
+      - uses: actions/checkout@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
         with:
-          distribution: 'adopt'
-          java-version: '11'
-          cache: maven
-          cache-dependency-path: "./*pom.xml"
-      - name: Create files to cache
-        run: |
-          mvn verify -f ./pom.xml
-          if [ ! -d ~/.m2/repository ]; then
-            echo "::error::The ~/.m2/repository directory does not exist unexpectedly"
-            exit 1
-          fi
-  maven-restore:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest]
-    needs: maven-save
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Run setup-java with the cache for maven
-        uses: itchyny/setup-java@feat-cache-dependency-path
-        id: setup-java
-        with:
-          distribution: 'adopt'
-          java-version: '11'
-          cache: maven
-          cache-dependency-path: "./pom.xml"
-      - name: Confirm that ~/.m2/repository directory has been made
-        run: |
-          if [ ! -d ~/.m2/repository ]; then
-            echo "::error::The ~/.m2/repository directory does not exist unexpectedly"
-            exit 1
-          fi
-          ls ~/.m2/repository
+          dotnet-version: 7.x.x
+          source-url: https://nuget.pkg.github.com/xxxx/index.json
+      - run: echo $NUGET_AUTH_TOKEN
