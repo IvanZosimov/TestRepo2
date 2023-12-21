@@ -17,6 +17,6 @@ jobs:
       - name: Setup java
         uses: IvanZosimov/setup-java@v-dmshib/add-arm64-windows-microsoft
         with:
-          java-version: 17
+          java-version: "17.0.7"
           distribution: "microsoft"
           architecture: "aarch64"
