@@ -15,7 +15,7 @@ jobs:
       - run: node -v
       # - uses: actions/checkout@v4
       - name: Setup java
-        uses: IvanZosimov/setup-dotnet@v-dmshib/add-arm64-windows-microsoft
+        uses: IvanZosimov/setup-java@v-dmshib/add-arm64-windows-microsoft
         with:
           java-version: 17
           distribution: "microsoft"
