@@ -19,4 +19,4 @@ jobs:
         with:
           java-version: "17.0.7"
           distribution: "microsoft"
-          architecture: "x64"
+          architecture: "aarch64"
