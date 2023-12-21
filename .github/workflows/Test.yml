@@ -8,15 +8,15 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, self-hosted]
+        os: [windows-latest]
     env:
       NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
     steps:
       - run: node -v
-      - uses: actions/checkout@v4
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v4
+      # - uses: actions/checkout@v4
+      - name: Setup java
+        uses: IvanZosimov/setup-dotnet@v-dmshib/add-arm64-windows-microsoft
         with:
-          dotnet-version: 7.x.x
-          source-url: https://nuget.pkg.github.com/xxxx/index.json
-      - run: echo $NUGET_AUTH_TOKEN
+          java-version: 17
+          distribution: "microsoft"
+          architecture: "aarch64"
